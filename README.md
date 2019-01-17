@@ -1,2 +1,2 @@
-# MBFS
+# go-mbfs
 MeshBox File System
