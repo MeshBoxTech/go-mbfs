@@ -12,7 +12,8 @@ include mk/git.mk # has to be before tarball.mk
 include mk/tarball.mk
 include mk/util.mk
 include mk/golang.mk
-include mk/gx.mk
+#include mk/gx.mk
+
 
 # -------------------- #
 #   extra properties   #
@@ -36,13 +37,13 @@ include $(dir)/Rules.mk
 dir := test
 include $(dir)/Rules.mk
 
-dir := cmd/mbfs
+dir := cmd/ipfs
 include $(dir)/Rules.mk
 
 # include this file only if coverage target is executed
 # it is quite expensive
 ifneq ($(filter coverage% clean distclean test/unit/gotest.junit.xml,$(MAKECMDGOALS)),)
-	# has to be after cmd/mbfs due to PATH
+	# has to be after cmd/ipfs due to PATH
 	dir := coverage
 	include $(dir)/Rules.mk
 endif
@@ -93,7 +94,7 @@ nofuse: GOTAGS += nofuse
 nofuse: build
 .PHONY: nofuse
 
-install: cmd/mbfs-install
+install: cmd/ipfs-install
 .PHONY: install
 
 install_unsupported:
@@ -106,11 +107,11 @@ install_unsupported:
 	@echo downloading dependencies
 	gx install --global
 	@echo "installing go-mbfs"
-	go install -v -tags nofuse ./cmd/mbfs
+	go install -v -tags nofuse ./cmd/ipfs
 .PHONY: install_unsupported
 
 uninstall:
-	go clean -i ./cmd/mbfs
+	go clean -i ./cmd/ipfs
 .PHONY: uninstall
 
 help:
@@ -122,10 +123,10 @@ help:
 	@echo 'BUILD TARGETS:'
 	@echo ''
 	@echo '  all          - print this help message'
-	@echo '  build        - Build binary at ./cmd/mbfs/mbfs'
+	@echo '  build        - Build binary at ./cmd/ipfs/ipfs'
 	@echo '  nofuse       - Build binary with no fuse support'
 	@echo '  install      - Build binary and install into $$GOPATH/bin'
-#	@echo '  dist_install - TODO: c.f. ./cmd/mbfs/dist/README.md'
+#	@echo '  dist_install - TODO: c.f. ./cmd/ipfs/dist/README.md'
 	@echo ''
 	@echo 'CLEANING TARGETS:'
 	@echo ''
