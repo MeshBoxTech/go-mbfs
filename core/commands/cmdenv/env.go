@@ -3,9 +3,9 @@ package cmdenv
 import (
 	"fmt"
 
-	"github.com/ipfs/go-ipfs/commands"
-	"github.com/ipfs/go-ipfs/core"
-	coreiface "github.com/ipfs/go-ipfs/core/coreapi/interface"
+	"mbfs/go-mbfs/commands"
+	"mbfs/go-mbfs/core"
+	coreiface "mbfs/go-mbfs/core/coreapi/interface"
 
 	cmds "gx/ipfs/Qma6uuSyjkecGhMFFLfzyJDPyoDtNJSHJNweDccZhaWkgU/go-ipfs-cmds"
 	config "gx/ipfs/QmbK4EmM2Xx5fmbqK38TGP3PpY66r3tkXLZTcc7dF9mFwM/go-ipfs-config"

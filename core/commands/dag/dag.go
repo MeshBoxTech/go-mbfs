@@ -5,9 +5,9 @@ import (
 	"io"
 	"math"
 
-	"github.com/ipfs/go-ipfs/core/commands/cmdenv"
-	"github.com/ipfs/go-ipfs/core/coredag"
-	"github.com/ipfs/go-ipfs/pin"
+	"mbfs/go-mbfs/core/commands/cmdenv"
+	"mbfs/go-mbfs/core/coredag"
+	"mbfs/go-mbfs/pin"
 
 	cid "gx/ipfs/QmR8BauakNcBa3RbE4nbQu76PDiJgoQgz8AJdhJuiU4TAw/go-cid"
 	path "gx/ipfs/QmRG3XuGwT7GYuAqgWDJBKTzdaHMwAnc1x7J2KHEXNHxzG/go-path"

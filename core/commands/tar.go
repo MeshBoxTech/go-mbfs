@@ -4,10 +4,10 @@ import (
 	"fmt"
 	"io"
 
-	core "github.com/ipfs/go-ipfs/core"
-	cmdenv "github.com/ipfs/go-ipfs/core/commands/cmdenv"
-	coreiface "github.com/ipfs/go-ipfs/core/coreapi/interface"
-	tar "github.com/ipfs/go-ipfs/tar"
+	core "mbfs/go-mbfs/core"
+	cmdenv "mbfs/go-mbfs/core/commands/cmdenv"
+	coreiface "mbfs/go-mbfs/core/coreapi/interface"
+	tar "mbfs/go-mbfs/tar"
 
 	"gx/ipfs/QmRG3XuGwT7GYuAqgWDJBKTzdaHMwAnc1x7J2KHEXNHxzG/go-path"
 	cmds "gx/ipfs/Qma6uuSyjkecGhMFFLfzyJDPyoDtNJSHJNweDccZhaWkgU/go-ipfs-cmds"

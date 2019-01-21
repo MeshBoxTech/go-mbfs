@@ -3,7 +3,7 @@ package legacy
 import (
 	"io"
 
-	oldcmds "github.com/ipfs/go-ipfs/commands"
+	oldcmds "mbfs/go-mbfs/commands"
 
 	"gx/ipfs/Qma6uuSyjkecGhMFFLfzyJDPyoDtNJSHJNweDccZhaWkgU/go-ipfs-cmds"
 	logging "gx/ipfs/QmcuXC5cxs79ro2cUuHs4HQ2bkDLJUYokwL8aivcX6HW3C/go-log"

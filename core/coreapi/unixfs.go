@@ -4,12 +4,12 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/ipfs/go-ipfs/core"
-	"github.com/ipfs/go-ipfs/filestore"
+	"mbfs/go-mbfs/core"
+	"mbfs/go-mbfs/filestore"
 
-	coreiface "github.com/ipfs/go-ipfs/core/coreapi/interface"
-	"github.com/ipfs/go-ipfs/core/coreapi/interface/options"
-	"github.com/ipfs/go-ipfs/core/coreunix"
+	coreiface "mbfs/go-mbfs/core/coreapi/interface"
+	"mbfs/go-mbfs/core/coreapi/interface/options"
+	"mbfs/go-mbfs/core/coreunix"
 
 	"gx/ipfs/QmPpnbwgAuvhUkA9jGooR88ZwZtTUHXXvoQNKdjZC6nYku/go-ipfs-exchange-offline"
 	bstore "gx/ipfs/QmSNLNnL3kq3A1NGdQA9AtgxM9CWKiiSEup3W435jCkRQS/go-ipfs-blockstore"
@@ -24,7 +24,7 @@ import (
 	"gx/ipfs/QmcUXFi2Fp7oguoFT81f2poJpnb44dFkZanQhDBHMoYyG9/go-mfs"
 
 	// added by vingo
-	"github.com/ipfs/go-ipfs/core/crypto"
+	"mbfs/go-mbfs/core/crypto"
 	mdag "gx/ipfs/QmaDBne4KeY3UepeqSVKYpSmQGa3q9zP6x3LfVF2UjF3Hc/go-merkledag"
 	"gx/ipfs/QmdxUuburamoF6zF9qjeQC4WYcWGbWuRmdLacMEsW8ioD8/gogo-protobuf/proto"
 	pb "gx/ipfs/QmXLCwhHh7bxRsBnCKNE9BAN87V44aSxXLquZYTtjr6fZ3/go-unixfs/pb"

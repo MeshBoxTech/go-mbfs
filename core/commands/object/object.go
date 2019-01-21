@@ -8,9 +8,9 @@ import (
 	"io/ioutil"
 	"text/tabwriter"
 
-	cmdenv "github.com/ipfs/go-ipfs/core/commands/cmdenv"
-	coreiface "github.com/ipfs/go-ipfs/core/coreapi/interface"
-	"github.com/ipfs/go-ipfs/core/coreapi/interface/options"
+	cmdenv "mbfs/go-mbfs/core/commands/cmdenv"
+	coreiface "mbfs/go-mbfs/core/coreapi/interface"
+	"mbfs/go-mbfs/core/coreapi/interface/options"
 
 	cid "gx/ipfs/QmR8BauakNcBa3RbE4nbQu76PDiJgoQgz8AJdhJuiU4TAw/go-cid"
 	cmds "gx/ipfs/Qma6uuSyjkecGhMFFLfzyJDPyoDtNJSHJNweDccZhaWkgU/go-ipfs-cmds"

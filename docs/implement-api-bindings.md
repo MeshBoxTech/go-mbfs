@@ -28,7 +28,7 @@ handled for you by writes to the request body blocking.)
 ## API Transports
 
 Like with everything else, IPFS aims to be flexible regarding the API transports.
-Currently, the [go-ipfs](https://github.com/ipfs/go-ipfs) implementation supports
+Currently, the [go-ipfs](https://mbfs/go-mbfs) implementation supports
 both an in-process API and an HTTP api. More can be added easily, by mapping the
 API functions over a transport. (This is similar to how gRPC is also _mapped on
 top of transports_, like HTTP).
@@ -102,7 +102,7 @@ Currently, node-ipfs-api has three main files
 
 Despite all the generalization spoken about above, the IPFS API is actually very
 simple. You can inspect all the requests made with `nc` and the `--api` option
-(as of [this PR](https://github.com/ipfs/go-ipfs/pull/1598), or `0.3.8`):
+(as of [this PR](https://mbfs/go-mbfs/pull/1598), or `0.3.8`):
 
 ```
 > nc -l 5002 &

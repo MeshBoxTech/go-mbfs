@@ -7,9 +7,9 @@ import (
 	"sync"
 	"time"
 
-	core "github.com/ipfs/go-ipfs/core"
-	coreiface "github.com/ipfs/go-ipfs/core/coreapi/interface"
-	caopts "github.com/ipfs/go-ipfs/core/coreapi/interface/options"
+	core "mbfs/go-mbfs/core"
+	coreiface "mbfs/go-mbfs/core/coreapi/interface"
+	caopts "mbfs/go-mbfs/core/coreapi/interface/options"
 
 	cid "gx/ipfs/QmR8BauakNcBa3RbE4nbQu76PDiJgoQgz8AJdhJuiU4TAw/go-cid"
 	pstore "gx/ipfs/QmUymf8fJtideyv3z727BcZUifGBjMZMpCJqu3Gxk5aRUk/go-libp2p-peerstore"

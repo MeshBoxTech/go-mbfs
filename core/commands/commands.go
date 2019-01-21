@@ -1,6 +1,6 @@
 // Package commands implements the ipfs command interface
 //
-// Using github.com/ipfs/go-ipfs/commands to define the command line and HTTP
+// Using mbfs/go-mbfs/commands to define the command line and HTTP
 // APIs.  This is the interface available to folks using IPFS from outside of
 // the Go language.
 package commands
@@ -12,7 +12,7 @@ import (
 	"sort"
 	"strings"
 
-	e "github.com/ipfs/go-ipfs/core/commands/e"
+	e "mbfs/go-mbfs/core/commands/e"
 
 	cmds "gx/ipfs/Qma6uuSyjkecGhMFFLfzyJDPyoDtNJSHJNweDccZhaWkgU/go-ipfs-cmds"
 	"gx/ipfs/Qmde5VP1qUkyQXKCfmEUA7bP64V2HAptbJ7phuPp7jXWwg/go-ipfs-cmdkit"

@@ -7,12 +7,12 @@ import (
 	"strings"
 	"time"
 
-	cmdenv "github.com/ipfs/go-ipfs/core/commands/cmdenv"
-	ncmd "github.com/ipfs/go-ipfs/core/commands/name"
-	coreiface "github.com/ipfs/go-ipfs/core/coreapi/interface"
-	options "github.com/ipfs/go-ipfs/core/coreapi/interface/options"
-	ns "github.com/ipfs/go-ipfs/namesys"
-	nsopts "github.com/ipfs/go-ipfs/namesys/opts"
+	cmdenv "mbfs/go-mbfs/core/commands/cmdenv"
+	ncmd "mbfs/go-mbfs/core/commands/name"
+	coreiface "mbfs/go-mbfs/core/coreapi/interface"
+	options "mbfs/go-mbfs/core/coreapi/interface/options"
+	ns "mbfs/go-mbfs/namesys"
+	nsopts "mbfs/go-mbfs/namesys/opts"
 	path "gx/ipfs/QmRG3XuGwT7GYuAqgWDJBKTzdaHMwAnc1x7J2KHEXNHxzG/go-path"
 
 	cmds "gx/ipfs/Qma6uuSyjkecGhMFFLfzyJDPyoDtNJSHJNweDccZhaWkgU/go-ipfs-cmds"

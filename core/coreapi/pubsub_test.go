@@ -2,7 +2,7 @@ package coreapi_test
 
 import (
 	"context"
-	"github.com/ipfs/go-ipfs/core/coreapi/interface/options"
+	"mbfs/go-mbfs/core/coreapi/interface/options"
 	"testing"
 	"time"
 )

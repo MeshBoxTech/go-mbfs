@@ -9,10 +9,10 @@ import (
 	"strconv"
 	"strings"
 
-	version "github.com/ipfs/go-ipfs"
-	oldcmds "github.com/ipfs/go-ipfs/commands"
-	"github.com/ipfs/go-ipfs/core"
-	corecommands "github.com/ipfs/go-ipfs/core/commands"
+	version "mbfs/go-mbfs"
+	oldcmds "mbfs/go-mbfs/commands"
+	"mbfs/go-mbfs/core"
+	corecommands "mbfs/go-mbfs/core/commands"
 
 	path "gx/ipfs/QmRG3XuGwT7GYuAqgWDJBKTzdaHMwAnc1x7J2KHEXNHxzG/go-path"
 	cmds "gx/ipfs/Qma6uuSyjkecGhMFFLfzyJDPyoDtNJSHJNweDccZhaWkgU/go-ipfs-cmds"

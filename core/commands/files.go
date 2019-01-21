@@ -10,9 +10,9 @@ import (
 	"sort"
 	"strings"
 
-	core "github.com/ipfs/go-ipfs/core"
-	cmdenv "github.com/ipfs/go-ipfs/core/commands/cmdenv"
-	iface "github.com/ipfs/go-ipfs/core/coreapi/interface"
+	core "mbfs/go-mbfs/core"
+	cmdenv "mbfs/go-mbfs/core/commands/cmdenv"
+	iface "mbfs/go-mbfs/core/coreapi/interface"
 
 	humanize "gx/ipfs/QmPSBJL4momYnE7DcUyk2DVhD6rH488ZmHBGLbxNdhU44K/go-humanize"
 	offline "gx/ipfs/QmPpnbwgAuvhUkA9jGooR88ZwZtTUHXXvoQNKdjZC6nYku/go-ipfs-exchange-offline"

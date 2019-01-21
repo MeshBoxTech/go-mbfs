@@ -5,9 +5,9 @@ import (
 	"io"
 	"sort"
 
-	cmdenv "github.com/ipfs/go-ipfs/core/commands/cmdenv"
-	repo "github.com/ipfs/go-ipfs/repo"
-	fsrepo "github.com/ipfs/go-ipfs/repo/fsrepo"
+	cmdenv "mbfs/go-mbfs/core/commands/cmdenv"
+	repo "mbfs/go-mbfs/repo"
+	fsrepo "mbfs/go-mbfs/repo/fsrepo"
 
 	cmds "gx/ipfs/Qma6uuSyjkecGhMFFLfzyJDPyoDtNJSHJNweDccZhaWkgU/go-ipfs-cmds"
 	config "gx/ipfs/QmbK4EmM2Xx5fmbqK38TGP3PpY66r3tkXLZTcc7dF9mFwM/go-ipfs-config"

@@ -17,8 +17,8 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/ipfs/go-ipfs/core"
-	"github.com/ipfs/go-ipfs/core/coreapi/interface"
+	"mbfs/go-mbfs/core"
+	"mbfs/go-mbfs/core/coreapi/interface"
 
 	"gx/ipfs/QmR8BauakNcBa3RbE4nbQu76PDiJgoQgz8AJdhJuiU4TAw/go-cid"
 )

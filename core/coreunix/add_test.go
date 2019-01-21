@@ -10,10 +10,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ipfs/go-ipfs/core"
-	coreiface "github.com/ipfs/go-ipfs/core/coreapi/interface"
-	"github.com/ipfs/go-ipfs/pin/gc"
-	"github.com/ipfs/go-ipfs/repo"
+	"mbfs/go-mbfs/core"
+	coreiface "mbfs/go-mbfs/core/coreapi/interface"
+	"mbfs/go-mbfs/pin/gc"
+	"mbfs/go-mbfs/repo"
 
 	pi "gx/ipfs/QmR6YMs8EkXQLXNwQKxLnQp2VBZSepoEJ8KCZAyanJHhJu/go-ipfs-posinfo"
 	cid "gx/ipfs/QmR8BauakNcBa3RbE4nbQu76PDiJgoQgz8AJdhJuiU4TAw/go-cid"

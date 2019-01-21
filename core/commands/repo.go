@@ -12,9 +12,9 @@ import (
 	"sync"
 	"text/tabwriter"
 
-	cmdenv "github.com/ipfs/go-ipfs/core/commands/cmdenv"
-	corerepo "github.com/ipfs/go-ipfs/core/corerepo"
-	fsrepo "github.com/ipfs/go-ipfs/repo/fsrepo"
+	cmdenv "mbfs/go-mbfs/core/commands/cmdenv"
+	corerepo "mbfs/go-mbfs/core/corerepo"
+	fsrepo "mbfs/go-mbfs/repo/fsrepo"
 
 	cid "gx/ipfs/QmR8BauakNcBa3RbE4nbQu76PDiJgoQgz8AJdhJuiU4TAw/go-cid"
 	bstore "gx/ipfs/QmSNLNnL3kq3A1NGdQA9AtgxM9CWKiiSEup3W435jCkRQS/go-ipfs-blockstore"

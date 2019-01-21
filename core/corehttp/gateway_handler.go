@@ -14,9 +14,9 @@ import (
 	"strings"
 	"time"
 
-	core "github.com/ipfs/go-ipfs/core"
-	coreiface "github.com/ipfs/go-ipfs/core/coreapi/interface"
-	"github.com/ipfs/go-ipfs/dagutils"
+	core "mbfs/go-mbfs/core"
+	coreiface "mbfs/go-mbfs/core/coreapi/interface"
+	"mbfs/go-mbfs/dagutils"
 
 	humanize "gx/ipfs/QmPSBJL4momYnE7DcUyk2DVhD6rH488ZmHBGLbxNdhU44K/go-humanize"
 	chunker "gx/ipfs/QmR4QQVkBZsZENRjYFVi8dEtPL3daZRNKk24m4r6WKJHNm/go-ipfs-chunker"
@@ -333,7 +333,7 @@ func (i *gatewayHandler) getOrHeadHandler(ctx context.Context, w http.ResponseWr
 	})
 
 	// construct the correct back link
-	// https://github.com/ipfs/go-ipfs/issues/1365
+	// https://mbfs/go-mbfs/issues/1365
 	var backLink string = prefix + urlPath
 
 	// don't go further up than /ipfs/$hash/

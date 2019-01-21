@@ -7,9 +7,9 @@ import (
 	"io"
 	"io/ioutil"
 
-	util "github.com/ipfs/go-ipfs/blocks/blockstoreutil"
-	coreiface "github.com/ipfs/go-ipfs/core/coreapi/interface"
-	caopts "github.com/ipfs/go-ipfs/core/coreapi/interface/options"
+	util "mbfs/go-mbfs/blocks/blockstoreutil"
+	coreiface "mbfs/go-mbfs/core/coreapi/interface"
+	caopts "mbfs/go-mbfs/core/coreapi/interface/options"
 
 	cid "gx/ipfs/QmR8BauakNcBa3RbE4nbQu76PDiJgoQgz8AJdhJuiU4TAw/go-cid"
 	blocks "gx/ipfs/QmWoXtvgC8inqFkAATB7cp2Dax7XBi9VDvSg9RCCZufmRk/go-block-format"

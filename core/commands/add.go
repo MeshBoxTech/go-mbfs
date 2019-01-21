@@ -6,9 +6,9 @@ import (
 	"os"
 	"strings"
 
-	"github.com/ipfs/go-ipfs/core/commands/cmdenv"
-	coreiface "github.com/ipfs/go-ipfs/core/coreapi/interface"
-	"github.com/ipfs/go-ipfs/core/coreapi/interface/options"
+	"mbfs/go-mbfs/core/commands/cmdenv"
+	coreiface "mbfs/go-mbfs/core/coreapi/interface"
+	"mbfs/go-mbfs/core/coreapi/interface/options"
 
 	"gx/ipfs/QmPtj12fdwuAqj9sBSTNUxBNu8kCGNp8b3o8yUzMm5GHpq/pb"
 	"gx/ipfs/QmZMWMvWMVKCbHetJ4RgndbuEF1io2UpUxwQwtNjtYPzSC/go-ipfs-files"

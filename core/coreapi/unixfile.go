@@ -8,7 +8,7 @@ import (
 	gopath "path"
 	"time"
 
-	"github.com/ipfs/go-ipfs/core/coreapi/interface"
+	"mbfs/go-mbfs/core/coreapi/interface"
 
 	ft "gx/ipfs/QmXLCwhHh7bxRsBnCKNE9BAN87V44aSxXLquZYTtjr6fZ3/go-unixfs"
 	uio "gx/ipfs/QmXLCwhHh7bxRsBnCKNE9BAN87V44aSxXLquZYTtjr6fZ3/go-unixfs/io"

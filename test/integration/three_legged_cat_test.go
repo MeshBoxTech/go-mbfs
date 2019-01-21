@@ -9,12 +9,12 @@ import (
 	"testing"
 	"time"
 
-	core "github.com/ipfs/go-ipfs/core"
-	"github.com/ipfs/go-ipfs/core/coreapi"
-	"github.com/ipfs/go-ipfs/core/coreapi/interface"
-	coreunix "github.com/ipfs/go-ipfs/core/coreunix"
-	mock "github.com/ipfs/go-ipfs/core/mock"
-	"github.com/ipfs/go-ipfs/thirdparty/unit"
+	core "mbfs/go-mbfs/core"
+	"mbfs/go-mbfs/core/coreapi"
+	"mbfs/go-mbfs/core/coreapi/interface"
+	coreunix "mbfs/go-mbfs/core/coreunix"
+	mock "mbfs/go-mbfs/core/mock"
+	"mbfs/go-mbfs/thirdparty/unit"
 
 	pstore "gx/ipfs/QmUymf8fJtideyv3z727BcZUifGBjMZMpCJqu3Gxk5aRUk/go-libp2p-peerstore"
 	mocknet "gx/ipfs/QmXnpYYg2onGLXVxM4Q5PEFcx29k8zeJQkPeLAk9h9naxg/go-libp2p/p2p/net/mock"

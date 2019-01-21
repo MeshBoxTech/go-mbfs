@@ -5,7 +5,7 @@ Packages underneath core/ provide a (relatively) stable, low-level API
 to carry out most IPFS-related tasks.  For more details on the other
 interfaces and how core/... fits into the bigger IPFS picture, see:
 
-  $ godoc github.com/ipfs/go-ipfs
+  $ godoc mbfs/go-mbfs
 */
 package core
 
@@ -20,15 +20,15 @@ import (
 	"strings"
 	"time"
 
-	version "github.com/ipfs/go-ipfs"
-	rp "github.com/ipfs/go-ipfs/exchange/reprovide"
-	filestore "github.com/ipfs/go-ipfs/filestore"
-	mount "github.com/ipfs/go-ipfs/fuse/mount"
-	namesys "github.com/ipfs/go-ipfs/namesys"
-	ipnsrp "github.com/ipfs/go-ipfs/namesys/republisher"
-	p2p "github.com/ipfs/go-ipfs/p2p"
-	pin "github.com/ipfs/go-ipfs/pin"
-	repo "github.com/ipfs/go-ipfs/repo"
+	version "mbfs/go-mbfs"
+	rp "mbfs/go-mbfs/exchange/reprovide"
+	filestore "mbfs/go-mbfs/filestore"
+	mount "mbfs/go-mbfs/fuse/mount"
+	namesys "mbfs/go-mbfs/namesys"
+	ipnsrp "mbfs/go-mbfs/namesys/republisher"
+	p2p "mbfs/go-mbfs/p2p"
+	pin "mbfs/go-mbfs/pin"
+	repo "mbfs/go-mbfs/repo"
 
 	ic "gx/ipfs/QmNiJiXwWE3kRhZrC5ej3kSjWHm337pYfhjLGSCDNKJP2s/go-libp2p-crypto"
 	u "gx/ipfs/QmNohiVssaPw3KVLZik59DBVGTSm2dGvYT9eoXt5DQ36Yz/go-ipfs-util"

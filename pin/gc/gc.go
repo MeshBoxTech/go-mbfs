@@ -7,7 +7,7 @@ import (
 	"fmt"
 	"strings"
 
-	pin "github.com/ipfs/go-ipfs/pin"
+	pin "mbfs/go-mbfs/pin"
 	bserv "gx/ipfs/QmVPeMNK9DfGLXDZzs2W4RoFWC9Zq1EnLGmLXtYtWrNdcW/go-blockservice"
 	dag "gx/ipfs/QmaDBne4KeY3UepeqSVKYpSmQGa3q9zP6x3LfVF2UjF3Hc/go-merkledag"
 

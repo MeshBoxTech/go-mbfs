@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"sort"
 
-	pb "github.com/ipfs/go-ipfs/filestore/pb"
+	pb "mbfs/go-mbfs/filestore/pb"
 
 	cid "gx/ipfs/QmR8BauakNcBa3RbE4nbQu76PDiJgoQgz8AJdhJuiU4TAw/go-cid"
 	blockstore "gx/ipfs/QmSNLNnL3kq3A1NGdQA9AtgxM9CWKiiSEup3W435jCkRQS/go-ipfs-blockstore"

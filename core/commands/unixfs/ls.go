@@ -6,8 +6,8 @@ import (
 	"sort"
 	"text/tabwriter"
 
-	cmdenv "github.com/ipfs/go-ipfs/core/commands/cmdenv"
-	iface "github.com/ipfs/go-ipfs/core/coreapi/interface"
+	cmdenv "mbfs/go-mbfs/core/commands/cmdenv"
+	iface "mbfs/go-mbfs/core/coreapi/interface"
 
 	unixfs "gx/ipfs/QmXLCwhHh7bxRsBnCKNE9BAN87V44aSxXLquZYTtjr6fZ3/go-unixfs"
 	cmds "gx/ipfs/Qma6uuSyjkecGhMFFLfzyJDPyoDtNJSHJNweDccZhaWkgU/go-ipfs-cmds"

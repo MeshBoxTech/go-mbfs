@@ -10,9 +10,9 @@ import (
 	"text/tabwriter"
 	"time"
 
-	core "github.com/ipfs/go-ipfs/core"
-	cmdenv "github.com/ipfs/go-ipfs/core/commands/cmdenv"
-	p2p "github.com/ipfs/go-ipfs/p2p"
+	core "mbfs/go-mbfs/core"
+	cmdenv "mbfs/go-mbfs/core/commands/cmdenv"
+	p2p "mbfs/go-mbfs/p2p"
 
 	ma "gx/ipfs/QmRKLtwMw131aK7ugC3G7ybpumMz78YrJe5dzneyindvG1/go-multiaddr"
 	madns "gx/ipfs/QmT4zgnKCyZBpRyxzsvZqUjzUkMWLJ2pZCw7uk6M6Kto5m/go-multiaddr-dns"

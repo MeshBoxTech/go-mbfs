@@ -5,7 +5,7 @@ import (
 	"errors"
 	"strings"
 
-	namesys "github.com/ipfs/go-ipfs/namesys"
+	namesys "mbfs/go-mbfs/namesys"
 
 	path "gx/ipfs/QmRG3XuGwT7GYuAqgWDJBKTzdaHMwAnc1x7J2KHEXNHxzG/go-path"
 	resolver "gx/ipfs/QmRG3XuGwT7GYuAqgWDJBKTzdaHMwAnc1x7J2KHEXNHxzG/go-path/resolver"

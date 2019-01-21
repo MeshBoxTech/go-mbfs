@@ -11,12 +11,12 @@ import (
 	"testing"
 	"time"
 
-	version "github.com/ipfs/go-ipfs"
-	core "github.com/ipfs/go-ipfs/core"
-	coreunix "github.com/ipfs/go-ipfs/core/coreunix"
-	namesys "github.com/ipfs/go-ipfs/namesys"
-	nsopts "github.com/ipfs/go-ipfs/namesys/opts"
-	repo "github.com/ipfs/go-ipfs/repo"
+	version "mbfs/go-mbfs"
+	core "mbfs/go-mbfs/core"
+	coreunix "mbfs/go-mbfs/core/coreunix"
+	namesys "mbfs/go-mbfs/namesys"
+	nsopts "mbfs/go-mbfs/namesys/opts"
+	repo "mbfs/go-mbfs/repo"
 
 	ci "gx/ipfs/QmNiJiXwWE3kRhZrC5ej3kSjWHm337pYfhjLGSCDNKJP2s/go-libp2p-crypto"
 	path "gx/ipfs/QmRG3XuGwT7GYuAqgWDJBKTzdaHMwAnc1x7J2KHEXNHxzG/go-path"

@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"io"
 
-	cmdenv "github.com/ipfs/go-ipfs/core/commands/cmdenv"
-	e "github.com/ipfs/go-ipfs/core/commands/e"
+	cmdenv "mbfs/go-mbfs/core/commands/cmdenv"
+	e "mbfs/go-mbfs/core/commands/e"
 
 	humanize "gx/ipfs/QmPSBJL4momYnE7DcUyk2DVhD6rH488ZmHBGLbxNdhU44K/go-humanize"
 	bitswap "gx/ipfs/QmXRphxBT4BH2GqGHUSbqULm7wNsxnpA2NrbNaY3DU1Y5K/go-bitswap"

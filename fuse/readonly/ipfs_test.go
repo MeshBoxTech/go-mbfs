@@ -13,10 +13,10 @@ import (
 	"sync"
 	"testing"
 
-	core "github.com/ipfs/go-ipfs/core"
-	coreapi "github.com/ipfs/go-ipfs/core/coreapi"
-	iface "github.com/ipfs/go-ipfs/core/coreapi/interface"
-	coremock "github.com/ipfs/go-ipfs/core/mock"
+	core "mbfs/go-mbfs/core"
+	coreapi "mbfs/go-mbfs/core/coreapi"
+	iface "mbfs/go-mbfs/core/coreapi/interface"
+	coremock "mbfs/go-mbfs/core/mock"
 
 	u "gx/ipfs/QmNohiVssaPw3KVLZik59DBVGTSm2dGvYT9eoXt5DQ36Yz/go-ipfs-util"
 	chunker "gx/ipfs/QmR4QQVkBZsZENRjYFVi8dEtPL3daZRNKk24m4r6WKJHNm/go-ipfs-chunker"

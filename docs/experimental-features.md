@@ -6,7 +6,7 @@ Once they reach maturity, there's going to be mention in the changelog and
 release posts. If they don't reach maturity, the same applies, and their code is
 removed.
 
-Subscribe to https://github.com/ipfs/go-ipfs/issues/3397 to get updates.
+Subscribe to https://mbfs/go-mbfs/issues/3397 to get updates.
 
 When you add a new experimental feature to go-ipfs, or change an experimental
 feature, you MUST please make a PR updating this document, and link the PR in

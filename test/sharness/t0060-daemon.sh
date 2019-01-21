@@ -30,7 +30,7 @@ test_expect_success "ipfs peer id looks good" '
 '
 
 # this is for checking SetAllowedOrigins race condition for the api and gateway
-# See https://github.com/ipfs/go-ipfs/pull/1966
+# See https://mbfs/go-mbfs/pull/1966
 test_expect_success "ipfs API works with the correct allowed origin port" '
   curl -s -X GET -H "Origin:http://localhost:$API_PORT" -I "http://$API_ADDR/api/v0/version"
 '

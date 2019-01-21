@@ -9,7 +9,7 @@ import (
 	"path/filepath"
 	"plugin"
 
-	iplugin "github.com/ipfs/go-ipfs/plugin"
+	iplugin "mbfs/go-mbfs/plugin"
 )
 
 func init() {

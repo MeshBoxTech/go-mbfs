@@ -5,8 +5,8 @@ import (
 	"fmt"
 	gopath "path"
 
-	"github.com/ipfs/go-ipfs/core"
-	coreiface "github.com/ipfs/go-ipfs/core/coreapi/interface"
+	"mbfs/go-mbfs/core"
+	coreiface "mbfs/go-mbfs/core/coreapi/interface"
 
 	"gx/ipfs/QmR8BauakNcBa3RbE4nbQu76PDiJgoQgz8AJdhJuiU4TAw/go-cid"
 	ipfspath "gx/ipfs/QmRG3XuGwT7GYuAqgWDJBKTzdaHMwAnc1x7J2KHEXNHxzG/go-path"

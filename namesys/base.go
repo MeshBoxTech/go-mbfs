@@ -5,7 +5,7 @@ import (
 	"strings"
 	"time"
 
-	opts "github.com/ipfs/go-ipfs/namesys/opts"
+	opts "mbfs/go-mbfs/namesys/opts"
 
 	path "gx/ipfs/QmRG3XuGwT7GYuAqgWDJBKTzdaHMwAnc1x7J2KHEXNHxzG/go-path"
 )

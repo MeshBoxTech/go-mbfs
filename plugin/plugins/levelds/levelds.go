@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"path/filepath"
 
-	"github.com/ipfs/go-ipfs/plugin"
-	"github.com/ipfs/go-ipfs/repo"
-	"github.com/ipfs/go-ipfs/repo/fsrepo"
+	"mbfs/go-mbfs/plugin"
+	"mbfs/go-mbfs/repo"
+	"mbfs/go-mbfs/repo/fsrepo"
 
 	ldbopts "gx/ipfs/QmbBhyDKsY4mbY6xsKt3qu9Y7FPvMJ6qbD8AMjYYvPRw1g/goleveldb/leveldb/opt"
 	levelds "gx/ipfs/QmccqjKZUTqp4ikWNyAbjBuP5HEdqSqRuAr9mcEhYab54a/go-ds-leveldb"

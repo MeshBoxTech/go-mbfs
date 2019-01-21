@@ -24,9 +24,9 @@ The `install_unsupported` target works nicely for openbsd. This will install
 `gx`, `gx-go` and run `go install -tags nofuse ./cmd/ipfs`.
 
 ```
-$ go get -v -u -d github.com/ipfs/go-ipfs
+$ go get -v -u -d mbfs/go-mbfs
 
-$ cd $GOPATH/src/github.com/ipfs/go-ipfs
+$ cd $GOPATH/src/mbfs/go-mbfs
 $ gmake install_unsupported
 ```
 

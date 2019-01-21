@@ -31,7 +31,7 @@ will be allowed up to release day.
 
 ## Post-Release
 - [ ] Bump version string in `repo/version.go` to `vX.Y.Z-dev`
-- [ ] Upload the final release to the github releases page: https://github.com/ipfs/go-ipfs/releases
+- [ ] Upload the final release to the github releases page: https://mbfs/go-mbfs/releases
 - Communication
   - [ ] Create the release issue
   - [ ] Announcements (both pre-release and post-release)

@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"testing"
 
-	opts "github.com/ipfs/go-ipfs/namesys/opts"
+	opts "mbfs/go-mbfs/namesys/opts"
 
 	ci "gx/ipfs/QmNiJiXwWE3kRhZrC5ej3kSjWHm337pYfhjLGSCDNKJP2s/go-libp2p-crypto"
 	offroute "gx/ipfs/QmNuVissmH2ftUd4ADvhm9WER3351wTYduY1EeDDGtP1tM/go-ipfs-routing/offline"

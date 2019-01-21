@@ -2,7 +2,7 @@ package coreapi_test
 
 import (
 	"context"
-	"github.com/ipfs/go-ipfs/core"
+	"mbfs/go-mbfs/core"
 	"io"
 	"io/ioutil"
 	"math/rand"
@@ -13,8 +13,8 @@ import (
 	ipath "gx/ipfs/QmRG3XuGwT7GYuAqgWDJBKTzdaHMwAnc1x7J2KHEXNHxzG/go-path"
 	files "gx/ipfs/QmZMWMvWMVKCbHetJ4RgndbuEF1io2UpUxwQwtNjtYPzSC/go-ipfs-files"
 
-	coreiface "github.com/ipfs/go-ipfs/core/coreapi/interface"
-	opt "github.com/ipfs/go-ipfs/core/coreapi/interface/options"
+	coreiface "mbfs/go-mbfs/core/coreapi/interface"
+	opt "mbfs/go-mbfs/core/coreapi/interface/options"
 )
 
 var rnd = rand.New(rand.NewSource(0x62796532303137))

@@ -8,7 +8,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 		&& rm -rf /var/lib/apt/lists/*
 
 ENV GOBIN      $GOPATH/bin
-ENV SRC_PATH   /go/src/github.com/ipfs/go-ipfs
+ENV SRC_PATH   /go/src/mbfs/go-mbfs
 
 RUN curl -s https://codecov.io/bash > /usr/bin/codecov && chmod +x /usr/bin/codecov \
 	&& go get -u github.com/Kubuxu/gocovmerge && go get -u golang.org/x/tools/cmd/cover

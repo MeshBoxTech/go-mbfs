@@ -5,8 +5,8 @@ import (
 	"errors"
 	"fmt"
 
-	coreiface "github.com/ipfs/go-ipfs/core/coreapi/interface"
-	caopts "github.com/ipfs/go-ipfs/core/coreapi/interface/options"
+	coreiface "mbfs/go-mbfs/core/coreapi/interface"
+	caopts "mbfs/go-mbfs/core/coreapi/interface/options"
 
 	offline "gx/ipfs/QmPpnbwgAuvhUkA9jGooR88ZwZtTUHXXvoQNKdjZC6nYku/go-ipfs-exchange-offline"
 	cid "gx/ipfs/QmR8BauakNcBa3RbE4nbQu76PDiJgoQgz8AJdhJuiU4TAw/go-cid"

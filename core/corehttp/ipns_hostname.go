@@ -6,9 +6,9 @@ import (
 	"net/http"
 	"strings"
 
-	core "github.com/ipfs/go-ipfs/core"
-	namesys "github.com/ipfs/go-ipfs/namesys"
-	nsopts "github.com/ipfs/go-ipfs/namesys/opts"
+	core "mbfs/go-mbfs/core"
+	namesys "mbfs/go-mbfs/namesys"
+	nsopts "mbfs/go-mbfs/namesys/opts"
 
 	isd "gx/ipfs/QmZmmuAXgX73UQmX1jRKjTGmjzq24Jinqkq8vzkBtno4uX/go-is-domain"
 )

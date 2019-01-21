@@ -5,8 +5,8 @@ import (
 	"io"
 	"net/http"
 
-	cmdenv "github.com/ipfs/go-ipfs/core/commands/cmdenv"
-	filestore "github.com/ipfs/go-ipfs/filestore"
+	cmdenv "mbfs/go-mbfs/core/commands/cmdenv"
+	filestore "mbfs/go-mbfs/filestore"
 
 	chunk "gx/ipfs/QmR4QQVkBZsZENRjYFVi8dEtPL3daZRNKk24m4r6WKJHNm/go-ipfs-chunker"
 	cid "gx/ipfs/QmR8BauakNcBa3RbE4nbQu76PDiJgoQgz8AJdhJuiU4TAw/go-cid"

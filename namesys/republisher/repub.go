@@ -5,8 +5,8 @@ import (
 	"errors"
 	"time"
 
-	keystore "github.com/ipfs/go-ipfs/keystore"
-	namesys "github.com/ipfs/go-ipfs/namesys"
+	keystore "mbfs/go-mbfs/keystore"
+	namesys "mbfs/go-mbfs/namesys"
 	path "gx/ipfs/QmRG3XuGwT7GYuAqgWDJBKTzdaHMwAnc1x7J2KHEXNHxzG/go-path"
 
 	ic "gx/ipfs/QmNiJiXwWE3kRhZrC5ej3kSjWHm337pYfhjLGSCDNKJP2s/go-libp2p-crypto"

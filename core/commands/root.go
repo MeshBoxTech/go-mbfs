@@ -3,11 +3,11 @@ package commands
 import (
 	"errors"
 
-	lgc "github.com/ipfs/go-ipfs/commands/legacy"
-	dag "github.com/ipfs/go-ipfs/core/commands/dag"
-	name "github.com/ipfs/go-ipfs/core/commands/name"
-	ocmd "github.com/ipfs/go-ipfs/core/commands/object"
-	unixfs "github.com/ipfs/go-ipfs/core/commands/unixfs"
+	lgc "mbfs/go-mbfs/commands/legacy"
+	dag "mbfs/go-mbfs/core/commands/dag"
+	name "mbfs/go-mbfs/core/commands/name"
+	ocmd "mbfs/go-mbfs/core/commands/object"
+	unixfs "mbfs/go-mbfs/core/commands/unixfs"
 
 	cmds "gx/ipfs/Qma6uuSyjkecGhMFFLfzyJDPyoDtNJSHJNweDccZhaWkgU/go-ipfs-cmds"
 	logging "gx/ipfs/QmcuXC5cxs79ro2cUuHs4HQ2bkDLJUYokwL8aivcX6HW3C/go-log"

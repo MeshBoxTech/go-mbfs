@@ -7,9 +7,9 @@ import (
 	"strings"
 	"time"
 
-	cmdenv "github.com/ipfs/go-ipfs/core/commands/cmdenv"
-	options "github.com/ipfs/go-ipfs/core/coreapi/interface/options"
-	nsopts "github.com/ipfs/go-ipfs/namesys/opts"
+	cmdenv "mbfs/go-mbfs/core/commands/cmdenv"
+	options "mbfs/go-mbfs/core/coreapi/interface/options"
+	nsopts "mbfs/go-mbfs/namesys/opts"
 
 	path "gx/ipfs/QmRG3XuGwT7GYuAqgWDJBKTzdaHMwAnc1x7J2KHEXNHxzG/go-path"
 	cmds "gx/ipfs/Qma6uuSyjkecGhMFFLfzyJDPyoDtNJSHJNweDccZhaWkgU/go-ipfs-cmds"

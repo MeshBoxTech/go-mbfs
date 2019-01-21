@@ -5,8 +5,8 @@ import (
 	"path"
 	"runtime"
 
-	version "github.com/ipfs/go-ipfs"
-	cmdenv "github.com/ipfs/go-ipfs/core/commands/cmdenv"
+	version "mbfs/go-mbfs"
+	cmdenv "mbfs/go-mbfs/core/commands/cmdenv"
 
 	manet "gx/ipfs/QmQVUtnrNGtCRkCMpXgpApfzQjc8FDaDVxHqWH8cnZQeh5/go-multiaddr-net"
 	sysi "gx/ipfs/QmZRjKbHa6DenStpQJFiaPcEwkZqrx7TH6xTf342LDU3qM/go-sysinfo"

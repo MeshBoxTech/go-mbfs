@@ -8,9 +8,9 @@ import (
 
 	gopath "path"
 
-	coreiface "github.com/ipfs/go-ipfs/core/coreapi/interface"
-	caopts "github.com/ipfs/go-ipfs/core/coreapi/interface/options"
-	coredag "github.com/ipfs/go-ipfs/core/coredag"
+	coreiface "mbfs/go-mbfs/core/coreapi/interface"
+	caopts "mbfs/go-mbfs/core/coreapi/interface/options"
+	coredag "mbfs/go-mbfs/core/coredag"
 
 	cid "gx/ipfs/QmR8BauakNcBa3RbE4nbQu76PDiJgoQgz8AJdhJuiU4TAw/go-cid"
 	ipld "gx/ipfs/QmcKKBwfz6FyQdHR2jsXrrF6XeSBXYL86anmWNewpFpoF5/go-ipld-format"

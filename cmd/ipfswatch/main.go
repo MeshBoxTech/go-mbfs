@@ -9,11 +9,11 @@ import (
 	"path/filepath"
 	"syscall"
 
-	commands "github.com/ipfs/go-ipfs/commands"
-	core "github.com/ipfs/go-ipfs/core"
-	corehttp "github.com/ipfs/go-ipfs/core/corehttp"
-	coreunix "github.com/ipfs/go-ipfs/core/coreunix"
-	fsrepo "github.com/ipfs/go-ipfs/repo/fsrepo"
+	commands "mbfs/go-mbfs/commands"
+	core "mbfs/go-mbfs/core"
+	corehttp "mbfs/go-mbfs/core/corehttp"
+	coreunix "mbfs/go-mbfs/core/coreunix"
+	fsrepo "mbfs/go-mbfs/repo/fsrepo"
 
 	process "gx/ipfs/QmSF8fPo3jgVBAy8fpdjjYqgG87dkJgUprRBHRd2tmfgpP/goprocess"
 	config "gx/ipfs/QmbK4EmM2Xx5fmbqK38TGP3PpY66r3tkXLZTcc7dF9mFwM/go-ipfs-config"

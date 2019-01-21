@@ -5,7 +5,7 @@ import (
 	"strings"
 	"testing"
 
-	opt "github.com/ipfs/go-ipfs/core/coreapi/interface/options"
+	opt "mbfs/go-mbfs/core/coreapi/interface/options"
 )
 
 func TestListSelf(t *testing.T) {

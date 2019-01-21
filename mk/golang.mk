@@ -17,10 +17,10 @@ TEST_GO :=
 TEST_GO_BUILD :=
 CHECK_GO :=
 
-go-pkg-name=$(shell $(GOCC) list $(go-tags) github.com/ipfs/go-ipfs/$(1))
+go-pkg-name=$(shell $(GOCC) list $(go-tags) mbfs/go-mbfs/$(1))
 go-main-name=$(notdir $(call go-pkg-name,$(1)))$(?exe)
 go-curr-pkg-tgt=$(d)/$(call go-main-name,$(d))
-go-pkgs=$(shell $(GOCC) list github.com/ipfs/go-ipfs/...)
+go-pkgs=$(shell $(GOCC) list mbfs/go-mbfs/...)
 
 go-tags=$(if $(GOTAGS), -tags="$(call join-with,$(space),$(GOTAGS))")
 go-flags-with-tags=$(GOFLAGS)$(go-tags)
@@ -70,7 +70,7 @@ check_go_path:
 	GOPATH="$(GOPATH)" bin/check_go_path mbfs/go-mbfs
 .PHONY: check_go_path
 DEPS_GO += check_go_path
-#github.com/ipfs/go-ipfs
+# GOPATH="$(GOPATH)" bin/check_go_path mbfs/go-mbfs
 
 TEST += $(TEST_GO)
 TEST_SHORT += test_go_fmt test_go_short

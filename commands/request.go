@@ -6,9 +6,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/ipfs/go-ipfs/core"
-	coreapi "github.com/ipfs/go-ipfs/core/coreapi"
-	coreiface "github.com/ipfs/go-ipfs/core/coreapi/interface"
+	"mbfs/go-mbfs/core"
+	coreapi "mbfs/go-mbfs/core/coreapi"
+	coreiface "mbfs/go-mbfs/core/coreapi/interface"
 
 	files "gx/ipfs/QmZMWMvWMVKCbHetJ4RgndbuEF1io2UpUxwQwtNjtYPzSC/go-ipfs-files"
 	"gx/ipfs/Qma6uuSyjkecGhMFFLfzyJDPyoDtNJSHJNweDccZhaWkgU/go-ipfs-cmds"

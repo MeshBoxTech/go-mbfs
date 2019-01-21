@@ -6,7 +6,7 @@ import (
 	"sync"
 	"time"
 
-	pin "github.com/ipfs/go-ipfs/pin"
+	pin "mbfs/go-mbfs/pin"
 	path "gx/ipfs/QmRG3XuGwT7GYuAqgWDJBKTzdaHMwAnc1x7J2KHEXNHxzG/go-path"
 	ft "gx/ipfs/QmXLCwhHh7bxRsBnCKNE9BAN87V44aSxXLquZYTtjr6fZ3/go-unixfs"
 

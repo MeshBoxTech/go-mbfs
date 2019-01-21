@@ -3,8 +3,8 @@ package repo
 import (
 	"errors"
 
-	filestore "github.com/ipfs/go-ipfs/filestore"
-	keystore "github.com/ipfs/go-ipfs/keystore"
+	filestore "mbfs/go-mbfs/filestore"
+	keystore "mbfs/go-mbfs/keystore"
 
 	ma "gx/ipfs/QmRKLtwMw131aK7ugC3G7ybpumMz78YrJe5dzneyindvG1/go-multiaddr"
 	config "gx/ipfs/QmbK4EmM2Xx5fmbqK38TGP3PpY66r3tkXLZTcc7dF9mFwM/go-ipfs-config"

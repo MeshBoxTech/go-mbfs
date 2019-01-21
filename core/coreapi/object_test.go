@@ -8,8 +8,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/ipfs/go-ipfs/core/coreapi/interface"
-	opt "github.com/ipfs/go-ipfs/core/coreapi/interface/options"
+	"mbfs/go-mbfs/core/coreapi/interface"
+	opt "mbfs/go-mbfs/core/coreapi/interface/options"
 )
 
 func TestNew(t *testing.T) {

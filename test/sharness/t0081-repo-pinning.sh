@@ -51,7 +51,7 @@ test_init_ipfs
 
 # test runs much faster without daemon.
 # TODO: turn this back on after:
-# https://github.com/ipfs/go-ipfs/issues/1075
+# https://mbfs/go-mbfs/issues/1075
 # test_launch_ipfs_daemon
 
 HASH_FILE6="QmRsBC3Y2G6VRPYGAVpZczx1W7Xw54MtM1NcLKTkn6rx3U"

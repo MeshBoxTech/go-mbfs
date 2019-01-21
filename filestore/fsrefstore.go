@@ -8,7 +8,7 @@ import (
 	"os"
 	"path/filepath"
 
-	pb "github.com/ipfs/go-ipfs/filestore/pb"
+	pb "mbfs/go-mbfs/filestore/pb"
 
 	posinfo "gx/ipfs/QmR6YMs8EkXQLXNwQKxLnQp2VBZSepoEJ8KCZAyanJHhJu/go-ipfs-posinfo"
 	cid "gx/ipfs/QmR8BauakNcBa3RbE4nbQu76PDiJgoQgz8AJdhJuiU4TAw/go-cid"

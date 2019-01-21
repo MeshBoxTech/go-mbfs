@@ -27,7 +27,7 @@ An explanation of this block is below.
 ```
 SET PATH=%PATH%;\msys64\usr\bin
 pacman --noconfirm -S  git make unzip
-go get -u github.com/ipfs/go-ipfs
+go get -u mbfs/go-mbfs
 cd %GOPATH%\src\github.com\ipfs\go-ipfs
 make install
 %GOPATH%\bin\ipfs.exe version --all
@@ -40,7 +40,7 @@ If `ipfs.exe` executes and the version string matches, then building was success
 | ---: | :--- |
 |`SET PATH=%PATH%;\msys64\usr\bin`         |Add msys2's tools to our [`PATH`](https://ss64.com/nt/path.html); Defaults to: (\msys64\usr\bin)|
 |`pacman --noconfirm -S  git make unzip`   |Install `go-ipfs` build dependencies|
-|`go get -u github.com/ipfs/go-ipfs`       |Fetch / Update `go-ipfs` source|
+|`go get -u mbfs/go-mbfs`       |Fetch / Update `go-ipfs` source|
 |`cd %GOPATH%\src\github.com\ipfs\go-ipfs` |Change to `go-ipfs` source directory|
 |`make install`                            |Build and install to `%GOPATH%\bin\ipfs.exe`|
 |`%GOPATH%\bin\ipfs.exe version --all`     |Test the built binary|
@@ -73,7 +73,7 @@ An explanation of this block is below.
 SET PATH=%PATH%;\cygwin64\bin
 mkdir %GOPATH%\src\github.com\ipfs
 cd %GOPATH%\src\github.com\ipfs
-git clone https://github.com/ipfs/go-ipfs.git
+git clone https://mbfs/go-mbfs.git
 cd %GOPATH%\src\github.com\ipfs\go-ipfs
 make install
 %GOPATH%\bin\ipfs.exe version --all
@@ -85,7 +85,7 @@ If `ipfs.exe` executes and the version string matches, then building was success
 |Command|Explanation|
 | ---: | :--- |
 |`SET PATH=%PATH%;\cygwin64\bin`           |Add Cygwin's tools to our [`PATH`](https://ss64.com/nt/path.html); Defaults to: (\cygwin64\bin)|
-|`mkdir %GOPATH%\src\github.com\ipfs`<br/>`cd %GOPATH%\src\github.com\ipfs`<br/>`git clone https://github.com/ipfs/go-ipfs.git`       |Fetch / Update `go-ipfs` source|
+|`mkdir %GOPATH%\src\github.com\ipfs`<br/>`cd %GOPATH%\src\github.com\ipfs`<br/>`git clone https://mbfs/go-mbfs.git`       |Fetch / Update `go-ipfs` source|
 |`cd %GOPATH%\src\github.com\ipfs\go-ipfs` |Change to `go-ipfs` source directory|
 |`make install`                            |Build and install to `%GOPATH%\bin\ipfs.exe`|
 |`%GOPATH%\bin\ipfs.exe version --all`     |Test the built binary|
@@ -119,8 +119,8 @@ go get -u github.com/whyrusleeping/gx-go
 
 ```
 SET PATH=%PATH%;%GOPATH%\bin
-go get -u -d github.com/ipfs/go-ipfs
-cd %GOPATH%/src/github.com/ipfs/go-ipfs
+go get -u -d mbfs/go-mbfs
+cd %GOPATH%/src/mbfs/go-mbfs
 gx --verbose install --global
 cd cmd\ipfs
 ```
@@ -130,7 +130,7 @@ We need the `git` commit hash to be included in our build so that in the extreme
 
 Finally, we'll build and test `ipfs` itself.
 ```
-go install -ldflags="-X "github.com/ipfs/go-ipfs".CurrentCommit=%SHA%"
+go install -ldflags="-X "mbfs/go-mbfs".CurrentCommit=%SHA%"
 %GOPATH%\bin\ipfs.exe version --all
 ```
 You can check that the ipfs output versions match with `go version` and `git rev-parse --short HEAD`.  
@@ -144,4 +144,4 @@ If you get authentication problems with Git, you might want to take a look at ht
 - **Anything else**  
 Please search [https://discuss.ipfs.io](https://discuss.ipfs.io/search?q=windows%20category%3A13) for any additional issues you may encounter. If you can't find any existing resolution, feel free to post a question asking for help.
 
-If you encounter a bug with `go-ipfs` itself (not related to building) please use the [issue tracker](https://github.com/ipfs/go-ipfs/issues) to report it.
+If you encounter a bug with `go-ipfs` itself (not related to building) please use the [issue tracker](https://mbfs/go-mbfs/issues) to report it.

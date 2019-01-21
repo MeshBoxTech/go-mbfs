@@ -3,9 +3,9 @@ package coremock
 import (
 	"context"
 
-	commands "github.com/ipfs/go-ipfs/commands"
-	core "github.com/ipfs/go-ipfs/core"
-	"github.com/ipfs/go-ipfs/repo"
+	commands "mbfs/go-mbfs/commands"
+	core "mbfs/go-mbfs/core"
+	"mbfs/go-mbfs/repo"
 
 	pstore "gx/ipfs/QmUymf8fJtideyv3z727BcZUifGBjMZMpCJqu3Gxk5aRUk/go-libp2p-peerstore"
 	host "gx/ipfs/QmVrjR2KMe57y4YyfHdYa3yKD278gN8W7CTiqSuYmxjA7F/go-libp2p-host"

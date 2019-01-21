@@ -7,10 +7,10 @@ import (
 	"path"
 	"sort"
 
-	commands "github.com/ipfs/go-ipfs/commands"
-	cmdenv "github.com/ipfs/go-ipfs/core/commands/cmdenv"
-	repo "github.com/ipfs/go-ipfs/repo"
-	fsrepo "github.com/ipfs/go-ipfs/repo/fsrepo"
+	commands "mbfs/go-mbfs/commands"
+	cmdenv "mbfs/go-mbfs/core/commands/cmdenv"
+	repo "mbfs/go-mbfs/repo"
+	fsrepo "mbfs/go-mbfs/repo/fsrepo"
 
 	ma "gx/ipfs/QmRKLtwMw131aK7ugC3G7ybpumMz78YrJe5dzneyindvG1/go-multiaddr"
 	inet "gx/ipfs/QmRKbEchaYADxSCyyjhDh4cTrUby8ftXUb8MRLBTHQYupw/go-libp2p-net"

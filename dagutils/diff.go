@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"path"
 
-	coreiface "github.com/ipfs/go-ipfs/core/coreapi/interface"
+	coreiface "mbfs/go-mbfs/core/coreapi/interface"
 
 	"gx/ipfs/QmR8BauakNcBa3RbE4nbQu76PDiJgoQgz8AJdhJuiU4TAw/go-cid"
 	dag "gx/ipfs/QmaDBne4KeY3UepeqSVKYpSmQGa3q9zP6x3LfVF2UjF3Hc/go-merkledag"

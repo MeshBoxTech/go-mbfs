@@ -6,9 +6,9 @@ import (
 	"io"
 	"text/tabwriter"
 
-	cmds "github.com/ipfs/go-ipfs/commands"
-	e "github.com/ipfs/go-ipfs/core/commands/e"
-	iface "github.com/ipfs/go-ipfs/core/coreapi/interface"
+	cmds "mbfs/go-mbfs/commands"
+	e "mbfs/go-mbfs/core/commands/e"
+	iface "mbfs/go-mbfs/core/coreapi/interface"
 
 	offline "gx/ipfs/QmPpnbwgAuvhUkA9jGooR88ZwZtTUHXXvoQNKdjZC6nYku/go-ipfs-exchange-offline"
 	cid "gx/ipfs/QmR8BauakNcBa3RbE4nbQu76PDiJgoQgz8AJdhJuiU4TAw/go-cid"

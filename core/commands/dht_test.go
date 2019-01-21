@@ -3,7 +3,7 @@ package commands
 import (
 	"testing"
 
-	"github.com/ipfs/go-ipfs/namesys"
+	"mbfs/go-mbfs/namesys"
 
 	ipns "gx/ipfs/QmZMJfrt7fU33oFQ9WvWnovhiiZ8T6qkWkFXNCFreJTzgT/go-ipns"
 	tu "gx/ipfs/QmZXjR5X1p4KrQ967cTsy4MymMzUM8mZECF3PV8UcN4o3g/go-testutil"

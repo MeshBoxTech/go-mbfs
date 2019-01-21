@@ -11,10 +11,10 @@ import (
 	"io"
 	"io/ioutil"
 
-	coreiface "github.com/ipfs/go-ipfs/core/coreapi/interface"
-	caopts "github.com/ipfs/go-ipfs/core/coreapi/interface/options"
-	"github.com/ipfs/go-ipfs/dagutils"
-	"github.com/ipfs/go-ipfs/pin"
+	coreiface "mbfs/go-mbfs/core/coreapi/interface"
+	caopts "mbfs/go-mbfs/core/coreapi/interface/options"
+	"mbfs/go-mbfs/dagutils"
+	"mbfs/go-mbfs/pin"
 
 	cid "gx/ipfs/QmR8BauakNcBa3RbE4nbQu76PDiJgoQgz8AJdhJuiU4TAw/go-cid"
 	ft "gx/ipfs/QmXLCwhHh7bxRsBnCKNE9BAN87V44aSxXLquZYTtjr6fZ3/go-unixfs"

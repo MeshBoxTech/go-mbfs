@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	opts "github.com/ipfs/go-ipfs/namesys/opts"
+	opts "mbfs/go-mbfs/namesys/opts"
 )
 
 type mockDNS struct {

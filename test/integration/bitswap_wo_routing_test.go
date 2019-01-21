@@ -5,8 +5,8 @@ import (
 	"context"
 	"testing"
 
-	"github.com/ipfs/go-ipfs/core"
-	"github.com/ipfs/go-ipfs/core/mock"
+	"mbfs/go-mbfs/core"
+	"mbfs/go-mbfs/core/mock"
 	"gx/ipfs/QmWoXtvgC8inqFkAATB7cp2Dax7XBi9VDvSg9RCCZufmRk/go-block-format"
 
 	cid "gx/ipfs/QmR8BauakNcBa3RbE4nbQu76PDiJgoQgz8AJdhJuiU4TAw/go-cid"

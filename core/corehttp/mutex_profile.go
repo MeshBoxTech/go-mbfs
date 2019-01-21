@@ -6,7 +6,7 @@ import (
 	"runtime"
 	"strconv"
 
-	core "github.com/ipfs/go-ipfs/core"
+	core "mbfs/go-mbfs/core"
 )
 
 // MutexFractionOption allows to set runtime.SetMutexProfileFraction via HTTP

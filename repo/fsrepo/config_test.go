@@ -7,8 +7,8 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/ipfs/go-ipfs/plugin/loader"
-	"github.com/ipfs/go-ipfs/repo/fsrepo"
+	"mbfs/go-mbfs/plugin/loader"
+	"mbfs/go-mbfs/repo/fsrepo"
 
 	"gx/ipfs/QmbK4EmM2Xx5fmbqK38TGP3PpY66r3tkXLZTcc7dF9mFwM/go-ipfs-config"
 )
