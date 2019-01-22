@@ -30,21 +30,21 @@ TGTS_$(d) := $(d)/unit_tests.coverprofile
 .PHONY: $(d)/unit_tests.coverprofile
 
 # sharness tests coverage
-$(d)/ipfs: GOTAGS += testrunmain
-$(d)/ipfs: $(d)/main
+$(d)/mbfs: GOTAGS += testrunmain
+$(d)/mbfs: $(d)/main
 	$(go-build)
 
-CLEAN += $(d)/ipfs
+CLEAN += $(d)/mbfs
 
 ifneq ($(filter coverage%,$(MAKECMDGOALS)),)
 	# this is quite hacky but it is best way I could fiture out
-	DEPS_test/sharness += cmd/ipfs/ipfs-test-cover $(d)/coverage_deps $(d)/ipfs
+	DEPS_test/sharness += cmd/mbfs/mbfs-test-cover $(d)/coverage_deps $(d)/mbfs
 endif
 
 export IPFS_COVER_DIR:= $(realpath $(d))/sharnesscover/
 
 $(d)/sharness_tests.coverprofile: export TEST_NO_PLUGIN=1
-$(d)/sharness_tests.coverprofile: $(d)/ipfs cmd/ipfs/ipfs-test-cover $(d)/coverage_deps test_sharness_short
+$(d)/sharness_tests.coverprofile: $(d)/ipfs cmd/mbfs/mbfs-test-cover $(d)/coverage_deps test_sharness_short
 	(cd $(@D)/sharnesscover && find . -type f | gocovmerge -list -) > $@
 
 

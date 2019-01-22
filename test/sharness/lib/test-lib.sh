@@ -11,11 +11,11 @@
 # add current directory to path, for ipfs tool.
 if test "$MAKE_SKIP_PATH" != "1"; then
   BIN=$(cd .. && echo `pwd`/bin)
-  BIN2=$(cd ../.. && echo `pwd`/cmd/ipfs)
+  BIN2=$(cd ../.. && echo `pwd`/cmd/mbfs)
   PATH=${BIN2}:${BIN}:${PATH}
 
   # assert the `ipfs` we're using is the right one.
-  if test `which ipfs` != ${BIN2}/ipfs; then
+  if test `which ipfs` != ${BIN2}/mbfs; then
     echo >&2 "Cannot find the tests' local ipfs tool."
     echo >&2 "Please check test and ipfs tool installation."
     exit 1
