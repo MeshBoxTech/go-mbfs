@@ -7,8 +7,8 @@ import (
 	"mbfs/go-mbfs/core"
 	coreiface "mbfs/go-mbfs/core/coreapi/interface"
 
-	cmds "gx/ipfs/Qma6uuSyjkecGhMFFLfzyJDPyoDtNJSHJNweDccZhaWkgU/go-ipfs-cmds"
-	config "gx/ipfs/QmbK4EmM2Xx5fmbqK38TGP3PpY66r3tkXLZTcc7dF9mFwM/go-ipfs-config"
+	cmds "mbfs/go-mbfs/gx/Qma6uuSyjkecGhMFFLfzyJDPyoDtNJSHJNweDccZhaWkgU/go-ipfs-cmds"
+	config "mbfs/go-mbfs/gx/QmbK4EmM2Xx5fmbqK38TGP3PpY66r3tkXLZTcc7dF9mFwM/go-ipfs-config"
 )
 
 // GetNode extracts the node from the environment.

@@ -9,7 +9,7 @@ import (
 	core "mbfs/go-mbfs/core"
 	coreapi "mbfs/go-mbfs/core/coreapi"
 
-	id "gx/ipfs/QmXnpYYg2onGLXVxM4Q5PEFcx29k8zeJQkPeLAk9h9naxg/go-libp2p/p2p/protocol/identify"
+	id "mbfs/go-mbfs/gx/QmXnpYYg2onGLXVxM4Q5PEFcx29k8zeJQkPeLAk9h9naxg/go-libp2p/p2p/protocol/identify"
 )
 
 type GatewayConfig struct {

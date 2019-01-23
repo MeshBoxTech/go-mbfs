@@ -36,22 +36,22 @@ TGTS_$(d) += $(TGTS_GX_$(d))
 
 # multihash is special
 $(d)/multihash:
-	go build -i $(go-flags-with-tags) -o "$@" "gx/ipfs/$(shell gx deps find go-multihash)/go-multihash/multihash"
+	go build -i $(go-flags-with-tags) -o "$@" "mbfs/go-mbfs/gx/$(shell gx deps find go-multihash)/go-multihash/multihash"
 TGTS_$(d) += $(d)/multihash
 
 # cid-fmt is also special
 $(d)/cid-fmt:
-	go build -i $(go-flags-with-tags) -o "$@" "gx/ipfs/$(shell gx deps find go-cidutil)/go-cidutil/cid-fmt"
+	go build -i $(go-flags-with-tags) -o "$@" "mbfs/go-mbfs/gx/$(shell gx deps find go-cidutil)/go-cidutil/cid-fmt"
 TGTS_$(d) += $(d)/cid-fmt
 
 # random is also special
 $(d)/random:
-	go build -i $(go-flags-with-tags) -o "$@" "gx/ipfs/$(shell gx deps find go-random)/go-random/random"
+	go build -i $(go-flags-with-tags) -o "$@" "mbfs/go-mbfs/gx/$(shell gx deps find go-random)/go-random/random"
 TGTS_$(d) += $(d)/random
 
 # random-files is also special
 $(d)/random-files:
-	go build -i $(go-flags-with-tags) -o "$@" "gx/ipfs/$(shell gx deps find go-random-files)/go-random-files/random-files"
+	go build -i $(go-flags-with-tags) -o "$@" "mbfs/go-mbfs/gx/$(shell gx deps find go-random-files)/go-random-files/random-files"
 TGTS_$(d) += $(d)/random-files
 
 

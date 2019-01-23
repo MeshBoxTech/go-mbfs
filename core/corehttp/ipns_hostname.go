@@ -10,7 +10,7 @@ import (
 	namesys "mbfs/go-mbfs/namesys"
 	nsopts "mbfs/go-mbfs/namesys/opts"
 
-	isd "gx/ipfs/QmZmmuAXgX73UQmX1jRKjTGmjzq24Jinqkq8vzkBtno4uX/go-is-domain"
+	isd "mbfs/go-mbfs/gx/QmZmmuAXgX73UQmX1jRKjTGmjzq24Jinqkq8vzkBtno4uX/go-is-domain"
 )
 
 // IPNSHostnameOption rewrites an incoming request if its Host: header contains

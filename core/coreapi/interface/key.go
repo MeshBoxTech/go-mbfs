@@ -5,7 +5,7 @@ import (
 
 	options "mbfs/go-mbfs/core/coreapi/interface/options"
 
-	"gx/ipfs/QmcqU6QUDSXprb1518vYDGczrTJTyGwLG9eUa5iNX4xUtS/go-libp2p-peer"
+	"mbfs/go-mbfs/gx/QmcqU6QUDSXprb1518vYDGczrTJTyGwLG9eUa5iNX4xUtS/go-libp2p-peer"
 )
 
 // Key specifies the interface to Keys in KeyAPI Keystore

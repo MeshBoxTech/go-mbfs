@@ -10,7 +10,7 @@ import (
 	"mbfs/go-mbfs/plugin/loader"
 	"mbfs/go-mbfs/repo/fsrepo"
 
-	"gx/ipfs/QmbK4EmM2Xx5fmbqK38TGP3PpY66r3tkXLZTcc7dF9mFwM/go-ipfs-config"
+	"mbfs/go-mbfs/gx/QmbK4EmM2Xx5fmbqK38TGP3PpY66r3tkXLZTcc7dF9mFwM/go-ipfs-config"
 )
 
 // note: to test sorting of the mountpoints in the disk spec they are

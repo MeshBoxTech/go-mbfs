@@ -11,10 +11,10 @@ import (
 	coreiface "mbfs/go-mbfs/core/coreapi/interface"
 	caopts "mbfs/go-mbfs/core/coreapi/interface/options"
 
-	cid "gx/ipfs/QmR8BauakNcBa3RbE4nbQu76PDiJgoQgz8AJdhJuiU4TAw/go-cid"
-	pstore "gx/ipfs/QmUymf8fJtideyv3z727BcZUifGBjMZMpCJqu3Gxk5aRUk/go-libp2p-peerstore"
-	peer "gx/ipfs/QmcqU6QUDSXprb1518vYDGczrTJTyGwLG9eUa5iNX4xUtS/go-libp2p-peer"
-	pubsub "gx/ipfs/QmdQmRSSAGmZvBcbETygeTbsqLLn4k69ELvTxVbEiZxGmA/go-libp2p-pubsub"
+	cid "mbfs/go-mbfs/gx/QmR8BauakNcBa3RbE4nbQu76PDiJgoQgz8AJdhJuiU4TAw/go-cid"
+	pstore "mbfs/go-mbfs/gx/QmUymf8fJtideyv3z727BcZUifGBjMZMpCJqu3Gxk5aRUk/go-libp2p-peerstore"
+	peer "mbfs/go-mbfs/gx/QmcqU6QUDSXprb1518vYDGczrTJTyGwLG9eUa5iNX4xUtS/go-libp2p-peer"
+	pubsub "mbfs/go-mbfs/gx/QmdQmRSSAGmZvBcbETygeTbsqLLn4k69ELvTxVbEiZxGmA/go-libp2p-pubsub"
 )
 
 type PubSubAPI CoreAPI

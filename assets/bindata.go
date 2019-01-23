@@ -7,13 +7,13 @@
 // init-doc/quick-start
 // init-doc/readme
 // init-doc/security-notes
-// ../../../../gx/ipfs/QmdZ4PvPHFQVLLEve7DgoKDcSY19wwpGBB1GKjjKi2rEL1/dir-index-html/LICENSE
-// ../../../../gx/ipfs/QmdZ4PvPHFQVLLEve7DgoKDcSY19wwpGBB1GKjjKi2rEL1/dir-index-html/README.md
-// ../../../../gx/ipfs/QmdZ4PvPHFQVLLEve7DgoKDcSY19wwpGBB1GKjjKi2rEL1/dir-index-html/dir-index-uncat.html
-// ../../../../gx/ipfs/QmdZ4PvPHFQVLLEve7DgoKDcSY19wwpGBB1GKjjKi2rEL1/dir-index-html/dir-index.html
-// ../../../../gx/ipfs/QmdZ4PvPHFQVLLEve7DgoKDcSY19wwpGBB1GKjjKi2rEL1/dir-index-html/index.go
-// ../../../../gx/ipfs/QmdZ4PvPHFQVLLEve7DgoKDcSY19wwpGBB1GKjjKi2rEL1/dir-index-html/knownIcons.txt
-// ../../../../gx/ipfs/QmdZ4PvPHFQVLLEve7DgoKDcSY19wwpGBB1GKjjKi2rEL1/dir-index-html/package.json
+// ../../../../mbfs/go-mbfs/gx/QmdZ4PvPHFQVLLEve7DgoKDcSY19wwpGBB1GKjjKi2rEL1/dir-index-html/LICENSE
+// ../../../../mbfs/go-mbfs/gx/QmdZ4PvPHFQVLLEve7DgoKDcSY19wwpGBB1GKjjKi2rEL1/dir-index-html/README.md
+// ../../../../mbfs/go-mbfs/gx/QmdZ4PvPHFQVLLEve7DgoKDcSY19wwpGBB1GKjjKi2rEL1/dir-index-html/dir-index-uncat.html
+// ../../../../mbfs/go-mbfs/gx/QmdZ4PvPHFQVLLEve7DgoKDcSY19wwpGBB1GKjjKi2rEL1/dir-index-html/dir-index.html
+// ../../../../mbfs/go-mbfs/gx/QmdZ4PvPHFQVLLEve7DgoKDcSY19wwpGBB1GKjjKi2rEL1/dir-index-html/index.go
+// ../../../../mbfs/go-mbfs/gx/QmdZ4PvPHFQVLLEve7DgoKDcSY19wwpGBB1GKjjKi2rEL1/dir-index-html/knownIcons.txt
+// ../../../../mbfs/go-mbfs/gx/QmdZ4PvPHFQVLLEve7DgoKDcSY19wwpGBB1GKjjKi2rEL1/dir-index-html/package.json
 // DO NOT EDIT!
 
 package assets

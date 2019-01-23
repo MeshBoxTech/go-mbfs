@@ -13,7 +13,7 @@ import (
 	mount "mbfs/go-mbfs/fuse/mount"
 	rofs "mbfs/go-mbfs/fuse/readonly"
 
-	logging "gx/ipfs/QmcuXC5cxs79ro2cUuHs4HQ2bkDLJUYokwL8aivcX6HW3C/go-log"
+	logging "mbfs/go-mbfs/gx/QmcuXC5cxs79ro2cUuHs4HQ2bkDLJUYokwL8aivcX6HW3C/go-log"
 )
 
 var log = logging.Logger("node")

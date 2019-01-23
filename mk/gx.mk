@@ -1,4 +1,4 @@
-gx-path = gx/ipfs/$(shell gx deps find $(1))/$(1)
+gx-path = mbfs/go-mbfs/gx/$(shell gx deps find $(1))/$(1)
 
 gx-deps:
 	gx install --global

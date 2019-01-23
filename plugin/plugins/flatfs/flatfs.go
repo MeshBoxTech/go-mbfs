@@ -8,7 +8,7 @@ import (
 	"mbfs/go-mbfs/repo"
 	"mbfs/go-mbfs/repo/fsrepo"
 
-	flatfs "gx/ipfs/QmVFboKxbVJZMJAoFdvX6q4hzvXFkbWCE8DejnqrQV4ZtN/go-ds-flatfs"
+	flatfs "mbfs/go-mbfs/gx/QmVFboKxbVJZMJAoFdvX6q4hzvXFkbWCE8DejnqrQV4ZtN/go-ds-flatfs"
 )
 
 // Plugins is exported list of plugins that will be loaded

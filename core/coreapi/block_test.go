@@ -9,7 +9,7 @@ import (
 	coreiface "mbfs/go-mbfs/core/coreapi/interface"
 	opt "mbfs/go-mbfs/core/coreapi/interface/options"
 
-	mh "gx/ipfs/QmerPMzPk1mJVowm8KgmoknWa4yCYvvugMPsgWmDNUvDLW/go-multihash"
+	mh "mbfs/go-mbfs/gx/QmerPMzPk1mJVowm8KgmoknWa4yCYvvugMPsgWmDNUvDLW/go-multihash"
 )
 
 func TestBlockPut(t *testing.T) {

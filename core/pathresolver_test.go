@@ -5,7 +5,7 @@ import (
 
 	core "mbfs/go-mbfs/core"
 	coremock "mbfs/go-mbfs/core/mock"
-	path "gx/ipfs/QmRG3XuGwT7GYuAqgWDJBKTzdaHMwAnc1x7J2KHEXNHxzG/go-path"
+	path "mbfs/go-mbfs/gx/QmRG3XuGwT7GYuAqgWDJBKTzdaHMwAnc1x7J2KHEXNHxzG/go-path"
 )
 
 func TestResolveNoComponents(t *testing.T) {

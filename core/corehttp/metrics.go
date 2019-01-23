@@ -6,8 +6,8 @@ import (
 
 	core "mbfs/go-mbfs/core"
 
-	prometheus "gx/ipfs/QmTQuFQWHAWy4wMH6ZyPfGiawA5u9T8rs79FENoV8yXaoS/client_golang/prometheus"
-	promhttp "gx/ipfs/QmTQuFQWHAWy4wMH6ZyPfGiawA5u9T8rs79FENoV8yXaoS/client_golang/prometheus/promhttp"
+	prometheus "mbfs/go-mbfs/gx/QmTQuFQWHAWy4wMH6ZyPfGiawA5u9T8rs79FENoV8yXaoS/client_golang/prometheus"
+	promhttp "mbfs/go-mbfs/gx/QmTQuFQWHAWy4wMH6ZyPfGiawA5u9T8rs79FENoV8yXaoS/client_golang/prometheus/promhttp"
 )
 
 // This adds the scraping endpoint which Prometheus uses to fetch metrics.

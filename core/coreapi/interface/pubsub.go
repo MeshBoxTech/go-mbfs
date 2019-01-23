@@ -6,7 +6,7 @@ import (
 
 	options "mbfs/go-mbfs/core/coreapi/interface/options"
 
-	peer "gx/ipfs/QmcqU6QUDSXprb1518vYDGczrTJTyGwLG9eUa5iNX4xUtS/go-libp2p-peer"
+	peer "mbfs/go-mbfs/gx/QmcqU6QUDSXprb1518vYDGczrTJTyGwLG9eUa5iNX4xUtS/go-libp2p-peer"
 )
 
 // PubSubSubscription is an active PubSub subscription

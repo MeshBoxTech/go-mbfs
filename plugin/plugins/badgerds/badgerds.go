@@ -9,8 +9,8 @@ import (
 	"mbfs/go-mbfs/repo"
 	"mbfs/go-mbfs/repo/fsrepo"
 
-	humanize "gx/ipfs/QmPSBJL4momYnE7DcUyk2DVhD6rH488ZmHBGLbxNdhU44K/go-humanize"
-	badgerds "gx/ipfs/QmaixNkKwtinV3umL5VD1VDD5CQjnZhXY31awM2YHTzbui/go-ds-badger"
+	humanize "mbfs/go-mbfs/gx/QmPSBJL4momYnE7DcUyk2DVhD6rH488ZmHBGLbxNdhU44K/go-humanize"
+	badgerds "mbfs/go-mbfs/gx/QmaixNkKwtinV3umL5VD1VDD5CQjnZhXY31awM2YHTzbui/go-ds-badger"
 )
 
 // Plugins is exported list of plugins that will be loaded

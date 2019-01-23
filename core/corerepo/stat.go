@@ -9,7 +9,7 @@ import (
 	"mbfs/go-mbfs/core"
 	fsrepo "mbfs/go-mbfs/repo/fsrepo"
 
-	humanize "gx/ipfs/QmPSBJL4momYnE7DcUyk2DVhD6rH488ZmHBGLbxNdhU44K/go-humanize"
+	humanize "mbfs/go-mbfs/gx/QmPSBJL4momYnE7DcUyk2DVhD6rH488ZmHBGLbxNdhU44K/go-humanize"
 )
 
 // SizeStat wraps information about the repository size and its limit.

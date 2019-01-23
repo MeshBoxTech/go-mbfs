@@ -8,8 +8,8 @@ import (
 	"mbfs/go-mbfs/repo"
 	"mbfs/go-mbfs/repo/fsrepo"
 
-	ldbopts "gx/ipfs/QmbBhyDKsY4mbY6xsKt3qu9Y7FPvMJ6qbD8AMjYYvPRw1g/goleveldb/leveldb/opt"
-	levelds "gx/ipfs/QmccqjKZUTqp4ikWNyAbjBuP5HEdqSqRuAr9mcEhYab54a/go-ds-leveldb"
+	ldbopts "mbfs/go-mbfs/gx/QmbBhyDKsY4mbY6xsKt3qu9Y7FPvMJ6qbD8AMjYYvPRw1g/goleveldb/leveldb/opt"
+	levelds "mbfs/go-mbfs/gx/QmccqjKZUTqp4ikWNyAbjBuP5HEdqSqRuAr9mcEhYab54a/go-ds-leveldb"
 )
 
 // Plugins is exported list of plugins that will be loaded
