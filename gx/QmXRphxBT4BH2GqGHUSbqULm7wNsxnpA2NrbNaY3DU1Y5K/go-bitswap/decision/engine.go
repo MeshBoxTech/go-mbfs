@@ -70,8 +70,7 @@ type Envelope struct {
 
 type Engine struct {
 	// peerRequestQueue is a priority queue of requests received from peers.
-	// Requests are popped from the queue, packaged up, and placed in the
-	// outbox.
+	// Requests are popped from the queue, packaged up, and placed in the outbox.
 	peerRequestQueue *prq
 
 	// FIXME it's a bit odd for the client and the worker to both share memory
@@ -134,9 +133,9 @@ func (e *Engine) taskWorker(ctx context.Context) {
 	for {
 		oneTimeUse := make(chan *Envelope, 1) // buffer to prevent blocking
 		select {
-		case <-ctx.Done():
-			return
-		case e.outbox <- oneTimeUse:
+			case <-ctx.Done():
+				return
+			case e.outbox <- oneTimeUse:
 		}
 		// receiver is ready for an outoing envelope. let's prepare one. first,
 		// we must acquire a task from the PQ...
@@ -219,8 +218,10 @@ func (e *Engine) Peers() []peer.ID {
 	return response
 }
 
-// MessageReceived performs book-keeping. Returns error if passed invalid
-// arguments.
+// MessageReceived performs book-keeping. Returns error if passed invalid arguments.
+// 通过Engine的一个账单系统，统计一下本节点与发送数据节点之间的数据交互统计，
+// 然后再查找一下Engine中缓存的WantList信息，如果还有其它节点也在请求本节点刚刚接收到的数据，
+// 则将该数据放入peerRequestQueue中去
 func (e *Engine) MessageReceived(p peer.ID, m bsmsg.BitSwapMessage) error {
 	if m.Empty() {
 		log.Debugf("received empty message from %s", p)
@@ -244,11 +245,11 @@ func (e *Engine) MessageReceived(p peer.ID, m bsmsg.BitSwapMessage) error {
 	var activeEntries []*wl.Entry
 	for _, entry := range m.Wantlist() {
 		if entry.Cancel {
-			log.Debugf("%s cancel %s", p, entry.Cid)
+			log.Debugf("%s canceled %s", p, entry.Cid)
 			l.CancelWant(entry.Cid)
 			e.peerRequestQueue.Remove(entry.Cid, p)
 		} else {
-			log.Debugf("wants %s - %d", entry.Cid, entry.Priority)
+			log.Debugf("%s wants %s - %d", p, entry.Cid, entry.Priority)
 			l.Wants(entry.Cid, entry.Priority)
 			blockSize, err := e.bs.GetSize(entry.Cid)
 			if err != nil {
@@ -279,11 +280,15 @@ func (e *Engine) MessageReceived(p peer.ID, m bsmsg.BitSwapMessage) error {
 	return nil
 }
 
+// 查找一下Engine中缓存的WantList信息，如果还有其它节点也在请求本节点刚刚接收到的数据，
+// 则将该数据放入peerRequestQueue中去
 func (e *Engine) addBlock(block blocks.Block) {
 	work := false
 
+	// 遍历 Engine 中缓存的 Wantlist
 	for _, l := range e.ledgerMap {
 		l.lk.Lock()
+		// 如果还有其它节点也在请求本节点刚刚接收到的数据，则将该数据放入peerRequestQueue中去
 		if entry, ok := l.WantListContains(block.Cid()); ok {
 			e.peerRequestQueue.Push(l.Partner, entry)
 			work = true
@@ -362,6 +367,7 @@ func (e *Engine) numBytesReceivedFrom(p peer.ID) uint64 {
 }
 
 // ledger lazily instantiates a ledger
+// 实例化一个和 p 这个 peer 的账本对象
 func (e *Engine) findOrCreate(p peer.ID) *ledger {
 	e.lock.Lock()
 	defer e.lock.Unlock()
@@ -376,7 +382,7 @@ func (e *Engine) findOrCreate(p peer.ID) *ledger {
 func (e *Engine) signalNewWork() {
 	// Signal task generation to restart (if stopped!)
 	select {
-	case e.workSignal <- struct{}{}:
-	default:
+		case e.workSignal <- struct{}{}:
+		default:
 	}
 }

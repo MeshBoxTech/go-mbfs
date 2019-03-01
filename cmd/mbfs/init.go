@@ -40,7 +40,7 @@ ipfs uses a repository in the local file system. By default, the repo is
 located at ~/.ipfs. To change the repo location, set the $IPFS_PATH
 environment variable:
 
-    export IPFS_PATH=/path/to/ipfsrepo
+    export MBFS_PATH=/path/to/ipfsrepo
 `,
 	},
 	Arguments: []cmdkit.Argument{
@@ -107,9 +107,7 @@ environment variable:
 	},
 }
 
-var errRepoExists = errors.New(`ipfs configuration file already exists!
-Reinitializing would overwrite your keys.
-`)
+var errRepoExists = errors.New(`ipfs configuration file already exists! Reinitializing would overwrite your keys.`)
 
 func initWithDefaults(out io.Writer, repoRoot string, profile string) error {
 	var profiles []string

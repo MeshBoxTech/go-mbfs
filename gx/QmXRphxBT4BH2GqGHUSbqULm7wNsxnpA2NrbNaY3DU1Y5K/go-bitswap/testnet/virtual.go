@@ -253,3 +253,10 @@ func tagForPeers(a, b peer.ID) string {
 	}
 	return string(b + a)
 }
+
+// added by vingo
+func (nc *networkClient)SubCopyProvs() chan cid.Cid  {
+	return nil
+}
+///////////////////
+

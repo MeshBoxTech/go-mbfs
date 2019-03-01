@@ -9,8 +9,8 @@ test_description="Test daemon --init command"
 . lib/test-lib.sh
 
 # We don't want the normal test_init_ipfs but we need to make sure the
-# IPFS_PATH is set correctly.
-export IPFS_PATH="$(pwd)/.ipfs"
+# MBFS_PATH is set correctly.
+export MBFS_PATH="$(pwd)/.ipfs"
 
 # safety check since we will be removing the directory
 if [ -e "$IPFS_PATH" ]; then
@@ -37,12 +37,12 @@ test_ipfs_daemon_init() {
   '
 }
 
-test_expect_success "remove \$IPFS_PATH dir" '
+test_expect_success "remove \$MBFS_PATH dir" '
   rm -rf "$IPFS_PATH"
 '
 test_ipfs_daemon_init
 
-test_expect_success "create empty \$IPFS_PATH dir" '
+test_expect_success "create empty \$MBFS_PATH dir" '
   rm -rf "$IPFS_PATH" &&
   mkdir "$IPFS_PATH"
 '

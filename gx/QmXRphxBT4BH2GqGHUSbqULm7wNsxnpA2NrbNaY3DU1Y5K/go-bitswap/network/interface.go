@@ -41,6 +41,10 @@ type BitSwapNetwork interface {
 	Stats() NetworkStats
 
 	Routing
+
+	// added by vingo
+	SubCopyProvs() chan cid.Cid
+	///////////////////
 }
 
 type MessageSender interface {

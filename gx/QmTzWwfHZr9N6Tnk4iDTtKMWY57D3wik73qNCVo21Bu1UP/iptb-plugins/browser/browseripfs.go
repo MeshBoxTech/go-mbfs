@@ -284,9 +284,9 @@ func (l *BrowserIpfs) Shell(ctx context.Context, nodes []testbedi.Core) error {
 		return fmt.Errorf("no shell found")
 	}
 
-	if len(os.Getenv("IPFS_PATH")) != 0 {
-		// If the users shell sets IPFS_PATH, it will just be overridden by the shell again
-		return fmt.Errorf("shell has IPFS_PATH set, please unset before trying to use iptb shell")
+	if len(os.Getenv("MBFS_PATH")) != 0 {
+		// If the users shell sets MBFS_PATH, it will just be overridden by the shell again
+		return fmt.Errorf("shell has MBFS_PATH set, please unset before trying to use iptb shell")
 	}
 
 	nenvs, err := l.env()
@@ -381,10 +381,10 @@ func (l *BrowserIpfs) getPID() (int, error) {
 
 func (l *BrowserIpfs) env() ([]string, error) {
 	envs := os.Environ()
-	ipfspath := "IPFS_PATH=" + l.dir
+	ipfspath := "MBFS_PATH=" + l.dir
 
 	for i, e := range envs {
-		if strings.HasPrefix(e, "IPFS_PATH=") {
+		if strings.HasPrefix(e, "MBFS_PATH=") {
 			envs[i] = ipfspath
 			return envs, nil
 		}

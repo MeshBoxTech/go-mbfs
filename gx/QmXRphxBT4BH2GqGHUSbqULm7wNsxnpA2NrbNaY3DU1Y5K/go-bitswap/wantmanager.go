@@ -41,10 +41,8 @@ type peerStatus struct {
 
 func NewWantManager(ctx context.Context, network bsnet.BitSwapNetwork) *WantManager {
 	ctx, cancel := context.WithCancel(ctx)
-	wantlistGauge := metrics.NewCtx(ctx, "wantlist_total",
-		"Number of items in wantlist.").Gauge()
-	sentHistogram := metrics.NewCtx(ctx, "sent_all_blocks_bytes", "Histogram of blocks sent by"+
-		" this bitswap").Histogram(metricsBuckets)
+	wantlistGauge := metrics.NewCtx(ctx, "wantlist_total","Number of items in wantlist.").Gauge()
+	sentHistogram := metrics.NewCtx(ctx, "sent_all_blocks_bytes", "Histogram of blocks sent by"+	" this bitswap").Histogram(metricsBuckets)
 	return &WantManager{
 		incoming:      make(chan *wantSet, 10),
 		connectEvent:  make(chan peerStatus, 10),
@@ -302,26 +300,27 @@ func (pm *WantManager) Run() {
 			brdc := len(ws.targets) == 0
 
 			// add changes to our wantlist
+			// 将 ws.entries 中的 cid 添加到 WantManager的两个 ThreadSafe 队列里（或从队列删除）
 			for _, e := range ws.entries {
 				if e.Cancel {
 					if brdc {
-						pm.bcwl.Remove(e.Cid, ws.from)
+						pm.bcwl.Remove(e.Cid, ws.from)		// 从全网广播队列删除
 					}
 
-					if pm.wl.Remove(e.Cid, ws.from) {
+					if pm.wl.Remove(e.Cid, ws.from) {		// 从指定了 peer 的队列删除
 						pm.wantlistGauge.Dec()
 					}
 				} else {
 					if brdc {
-						pm.bcwl.AddEntry(e.Entry, ws.from)
+						pm.bcwl.AddEntry(e.Entry, ws.from)	// 添加到全网广播队列
 					}
-					if pm.wl.AddEntry(e.Entry, ws.from) {
+					if pm.wl.AddEntry(e.Entry, ws.from) {	// 添加到指定了 peer 的队列
 						pm.wantlistGauge.Inc()
 					}
 				}
 			}
 
-			// broadcast those wantlist changes
+			// 将 ws.entries 中的 cid 添加到 BitSwapMessage 的 wangtlist，或者从 wantlist 里删除（mqQueue 队列）
 			if len(ws.targets) == 0 {
 				for _, p := range pm.peers {
 					p.addMessage(ws.entries, ws.from)

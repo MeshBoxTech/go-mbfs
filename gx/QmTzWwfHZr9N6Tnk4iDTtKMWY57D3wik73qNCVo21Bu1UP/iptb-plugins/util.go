@@ -109,7 +109,7 @@ func GetAttrDesc(attr string) (string, error) {
 	case attrID:
 		return "node ID", nil
 	case attrPath:
-		return "node IPFS_PATH", nil
+		return "node MBFS_PATH", nil
 	default:
 		return "", errors.New("unrecognized attribute")
 	}

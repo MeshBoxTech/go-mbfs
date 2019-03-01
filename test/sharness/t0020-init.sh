@@ -8,9 +8,9 @@ test_description="Test init command"
 
 . lib/test-lib.sh
 
-# test that ipfs fails to init if IPFS_PATH isnt writeable
+# test that ipfs fails to init if MBFS_PATH isnt writeable
 test_expect_success "create dir and change perms succeeds" '
-  export IPFS_PATH="$(pwd)/.badipfs" &&
+  export MBFS_PATH="$(pwd)/.badipfs" &&
   mkdir "$IPFS_PATH" &&
   chmod 000 "$IPFS_PATH"
 '
@@ -40,7 +40,7 @@ test_expect_success "cleanup dir with bad perms" '
 # test no repo error message
 # this applies to `ipfs add sth`, `ipfs refs <hash>`
 test_expect_success "ipfs cat fails" '
-  export IPFS_PATH="$(pwd)/.ipfs" &&
+  export MBFS_PATH="$(pwd)/.ipfs" &&
   test_must_fail ipfs cat Qmaa4Rw81a3a1VEx4LxB7HADUAXvZFhCoRdBzsMZyZmqHD 2> cat_fail_out
 '
 
@@ -52,8 +52,8 @@ test_expect_success "ipfs cat no repo message looks good" '
 
 # test that init succeeds
 test_expect_success "ipfs init succeeds" '
-  export IPFS_PATH="$(pwd)/.ipfs" &&
-  echo "IPFS_PATH: \"$IPFS_PATH\"" &&
+  export MBFS_PATH="$(pwd)/.ipfs" &&
+  echo "MBFS_PATH: \"$IPFS_PATH\"" &&
   BITS="2048" &&
   ipfs init --bits="$BITS" >actual_init ||
   test_fsh cat actual_init

@@ -503,7 +503,7 @@ improvements.
   * commands: fix description of --api (@lgierth)
 
 * Documentation
-  * --help: Add a note on using IPFS_PATH to the footer of the helptext.  (@sahib)
+  * --help: Add a note on using MBFS_PATH to the footer of the helptext.  (@sahib)
   * Moved email juan to ipfs/contribute (@richardlitt)
   * Added commit sign off section (@richardlitt)
   * Added a security section (@richardlitt)

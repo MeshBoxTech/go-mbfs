@@ -141,6 +141,7 @@ func (adder *Adder) add(reader io.Reader) (ipld.Node, error) {
 	}
 
 	if adder.Trickle {
+		// TODO 针对 trickle 添加模式，还需要将数据加密功能给加上
 		return trickle.Layout(params.New(chnk))
 	}
 
@@ -491,7 +492,7 @@ func (adder *Adder) addFile(file files.File) error {
 		adder.liveNodes = 0
 	}
 	adder.liveNodes++
-	//println("=========",file.FileName(),"=========")
+
 	if file.IsDirectory() {
 		return adder.addDir(file)
 	}

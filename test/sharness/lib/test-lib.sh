@@ -43,7 +43,7 @@ SHARNESS_LIB="lib/sharness/sharness.sh"
 
 # Make sure the ipfs path is set, also set in test_init_ipfs but that
 # is not always used.
-export IPFS_PATH="$(pwd)/.ipfs"
+export MBFS_PATH="$(pwd)/.ipfs"
 # Ask programs to please not print ANSI codes
 export TERM=dumb
 
@@ -147,7 +147,7 @@ test_init_ipfs() {
   # todo: in the future, use env?
 
   test_expect_success "ipfs init succeeds" '
-    export IPFS_PATH="$(pwd)/.ipfs" &&
+    export MBFS_PATH="$(pwd)/.ipfs" &&
     ipfs init --profile=test -b=1024 > /dev/null
   '
 

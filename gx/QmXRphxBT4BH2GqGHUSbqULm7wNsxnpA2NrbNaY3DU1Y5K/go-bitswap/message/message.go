@@ -17,8 +17,7 @@ import (
 // TODO move bs/msg/internal/pb to bs/internal/pb and rename pb package to bitswap_pb
 
 type BitSwapMessage interface {
-	// Wantlist returns a slice of unique keys that represent data wanted by
-	// the sender.
+	// Wantlist returns a slice of unique keys that represent data wanted by the sender.
 	Wantlist() []Entry
 
 	// Blocks returns a slice of unique blocks

@@ -26,10 +26,7 @@ func DefaultCacheOpts() CacheOpts {
 
 // CachedBlockstore returns a blockstore wrapped in an ARCCache and
 // then in a bloom filter cache, if the options indicate it.
-func CachedBlockstore(
-	ctx context.Context,
-	bs Blockstore,
-	opts CacheOpts) (cbs Blockstore, err error) {
+func CachedBlockstore(ctx context.Context,	bs Blockstore, opts CacheOpts) (cbs Blockstore, err error) {
 	cbs = bs
 
 	if opts.HasBloomFilterSize < 0 || opts.HasBloomFilterHashes < 0 ||

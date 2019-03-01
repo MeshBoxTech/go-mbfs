@@ -151,8 +151,7 @@ func (cfg *Config) NewNode(ctx context.Context) (host.Host, error) {
 		}
 	}
 
-	// TODO: This method succeeds if listening on one address succeeds. We
-	// should probably fail if listening on *any* addr fails.
+	// TODO: This method succeeds if listening on one address succeeds. We should probably fail if listening on *any* addr fails.
 	if err := h.Network().Listen(cfg.ListenAddrs...); err != nil {
 		h.Close()
 		return nil, err

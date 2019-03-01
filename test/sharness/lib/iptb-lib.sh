@@ -8,7 +8,7 @@ export IPTB_ROOT="$(pwd)/.iptb"
 ipfsi() {
   dir="$1"
   shift
-  IPFS_PATH="$IPTB_ROOT/testbeds/default/$dir" ipfs "$@"
+  MBFS_PATH="$IPTB_ROOT/testbeds/default/$dir" ipfs "$@"
 }
 
 check_has_connection() {

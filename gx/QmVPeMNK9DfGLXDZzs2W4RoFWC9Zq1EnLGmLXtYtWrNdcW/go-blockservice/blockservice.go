@@ -151,6 +151,7 @@ func (s *blockService) AddBlock(o blocks.Block) error {
 
 	log.Event(context.TODO(), "BlockService.BlockAdded", c)
 
+	// 将新添加的 block 通过 bitswap 将 cid 广播到网络
 	if err := s.exchange.HasBlock(o); err != nil {
 		// TODO(#4623): really an error?
 		return errors.New("blockservice is closed")
@@ -184,11 +185,13 @@ func (s *blockService) AddBlocks(bs []blocks.Block) error {
 		toput = bs
 	}
 
+	// 将需要添加并且数据库中还没有的 blocks 添加到数据库
 	err := s.blockstore.PutMany(toput)
 	if err != nil {
 		return err
 	}
 
+	// 将需要添加并且数据库中还没有的 blocks 广播到有需要的 peer
 	for _, o := range toput {
 		log.Event(context.TODO(), "BlockService.BlockAdded", o.Cid())
 		if err := s.exchange.HasBlock(o); err != nil {

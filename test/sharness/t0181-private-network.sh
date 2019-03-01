@@ -29,7 +29,7 @@ pnet_key() {
   random 16
 }
 
-pnet_key > "${IPFS_PATH}/swarm.key"
+pnet_key > "${MBFS_PATH}/swarm.key"
 
 LIBP2P_FORCE_PNET=1 test_launch_ipfs_daemon
 

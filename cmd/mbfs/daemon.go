@@ -118,13 +118,13 @@ or send a SIGTERM signal to it (e.g. with 'kill'). It may take a while for the
 daemon to shutdown gracefully, but it can be killed forcibly by sending a
 second signal.
 
-IPFS_PATH environment variable
+MBFS_PATH environment variable
 
 ipfs uses a repository in the local file system. By default, the repo is
 located at ~/.ipfs. To change the repo location, set the $IPFS_PATH
 environment variable:
 
-  export IPFS_PATH=/path/to/ipfsrepo
+  export MBFS_PATH=/path/to/ipfsrepo
 
 Routing
 
@@ -244,37 +244,37 @@ func daemonFunc(req *cmds.Request, re cmds.ResponseEmitter, env cmds.Environment
 	// sure we are permitted to access the resources (datastore, etc.)
 	repo, err := fsrepo.Open(cctx.ConfigRoot)
 	switch err {
-	default:
-		return err
-	case fsrepo.ErrNeedMigration:
-		domigrate, found := req.Options[migrateKwd].(bool)
-		fmt.Println("Found outdated fs-repo, migrations need to be run.")
-
-		if !found {
-			domigrate = YesNoPrompt("Run migrations now? [y/N]")
-		}
-
-		if !domigrate {
-			fmt.Println("Not running migrations of fs-repo now.")
-			fmt.Println("Please get fs-repo-migrations from https://dist.ipfs.io")
-			return fmt.Errorf("fs-repo requires migration")
-		}
-
-		err = migrate.RunMigration(fsrepo.RepoVersion)
-		if err != nil {
-			fmt.Println("The migrations of fs-repo failed:")
-			fmt.Printf("  %s\n", err)
-			fmt.Println("If you think this is a bug, please file an issue and include this whole log output.")
-			fmt.Println("  https://github.com/ipfs/fs-repo-migrations")
+		default:
 			return err
-		}
+		case fsrepo.ErrNeedMigration:
+			domigrate, found := req.Options[migrateKwd].(bool)
+			fmt.Println("Found outdated fs-repo, migrations need to be run.")
 
-		repo, err = fsrepo.Open(cctx.ConfigRoot)
-		if err != nil {
-			return err
-		}
-	case nil:
-		break
+			if !found {
+				domigrate = YesNoPrompt("Run migrations now? [y/N]")
+			}
+
+			if !domigrate {
+				fmt.Println("Not running migrations of fs-repo now.")
+				fmt.Println("Please get fs-repo-migrations from https://dist.ipfs.io")
+				return fmt.Errorf("fs-repo requires migration")
+			}
+
+			err = migrate.RunMigration(fsrepo.RepoVersion)
+			if err != nil {
+				fmt.Println("The migrations of fs-repo failed:")
+				fmt.Printf("  %s\n", err)
+				fmt.Println("If you think this is a bug, please file an issue and include this whole log output.")
+				fmt.Println("  https://github.com/ipfs/fs-repo-migrations")
+				return err
+			}
+
+			repo, err = fsrepo.Open(cctx.ConfigRoot)
+			if err != nil {
+				return err
+			}
+		case nil:
+			break
 	}
 
 	cfg, err := cctx.GetConfig()
@@ -314,16 +314,16 @@ func daemonFunc(req *cmds.Request, re cmds.ResponseEmitter, env cmds.Environment
 		}
 	}
 	switch routingOption {
-	case routingOptionSupernodeKwd:
-		return errors.New("supernode routing was never fully implemented and has been removed")
-	case routingOptionDHTClientKwd:
-		ncfg.Routing = core.DHTClientOption
-	case routingOptionDHTKwd:
-		ncfg.Routing = core.DHTOption
-	case routingOptionNoneKwd:
-		ncfg.Routing = core.NilRouterOption
-	default:
-		return fmt.Errorf("unrecognized routing option: %s", routingOption)
+		case routingOptionSupernodeKwd:
+			return errors.New("supernode routing was never fully implemented and has been removed")
+		case routingOptionDHTClientKwd:
+			ncfg.Routing = core.DHTClientOption
+		case routingOptionDHTKwd:
+			ncfg.Routing = core.DHTOption
+		case routingOptionNoneKwd:
+			ncfg.Routing = core.NilRouterOption
+		default:
+			return fmt.Errorf("unrecognized routing option: %s", routingOption)
 	}
 
 	node, err := core.NewNode(req.Context, ncfg)

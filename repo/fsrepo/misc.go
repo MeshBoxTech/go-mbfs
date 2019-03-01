@@ -11,13 +11,13 @@ import (
 // present, this function returns that value. Otherwise, it returns the default
 // repo path.
 func BestKnownPath() (string, error) {
-	ipfsPath := config.DefaultPathRoot
+	mbfsPath := config.DefaultPathRoot
 	if os.Getenv(config.EnvDir) != "" {
-		ipfsPath = os.Getenv(config.EnvDir)
+		mbfsPath = os.Getenv(config.EnvDir)
 	}
-	ipfsPath, err := homedir.Expand(ipfsPath)
+	mbfsPath, err := homedir.Expand(mbfsPath)
 	if err != nil {
 		return "", err
 	}
-	return ipfsPath, nil
+	return mbfsPath, nil
 }

@@ -40,6 +40,10 @@ type ProviderManager struct {
 	proc     goprocess.Process
 
 	cleanupInterval time.Duration
+
+	// added by vingo
+	copyprovs chan cid.Cid
+
 }
 
 type providerSet struct {
@@ -61,6 +65,9 @@ func NewProviderManager(ctx context.Context, local peer.ID, dstore ds.Batching) 
 	pm := new(ProviderManager)
 	pm.getprovs = make(chan *getProv)
 	pm.newprovs = make(chan *addProv)
+	// added by vingo
+	pm.copyprovs = make(chan cid.Cid, 10)
+	/////////////////
 	pm.dstore = autobatch.NewAutoBatching(dstore, batchBufferSize)
 	cache, err := lru.New(lruCacheSize)
 	if err != nil {
@@ -253,10 +260,17 @@ func (pm *ProviderManager) run() {
 	for {
 		select {
 		case np := <-pm.newprovs:
+			// 将 prov 对象加入到 provider 缓存
 			err := pm.addProv(np.k, np.val)
 			if err != nil {
 				log.Error("error adding new providers: ", err)
 			}
+
+			// added by vingo
+			// TODO: 在这里根据收到的 cid 数据标识调用 getBlock 方法
+			pm.copyprovs <- np.k
+			/////////////////
+
 		case gp := <-pm.getprovs:
 			provs, err := pm.providersForKey(gp.k)
 			if err != nil && err != ds.ErrNotFound {
@@ -309,6 +323,7 @@ func (pm *ProviderManager) run() {
 	}
 }
 
+// 将 prov 对象通过newprovs 管道加入到 provider 缓存
 func (pm *ProviderManager) AddProvider(ctx context.Context, k cid.Cid, val peer.ID) {
 	prov := &addProv{
 		k:   k,
@@ -356,3 +371,9 @@ func (ps *providerSet) setVal(p peer.ID, t time.Time) {
 
 	ps.set[p] = t
 }
+
+// added by vingo
+func (ps *ProviderManager) SubCopyProvs() chan cid.Cid  {
+	return ps.copyprovs
+}
+////////////////

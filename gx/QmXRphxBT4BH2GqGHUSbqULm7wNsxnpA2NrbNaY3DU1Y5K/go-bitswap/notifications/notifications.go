@@ -75,12 +75,12 @@ func (ps *impl) Subscribe(ctx context.Context, keys ...cid.Cid) <-chan blocks.Bl
 
 	// check if shutdown *after* preventing shutdowns.
 	select {
-	case <-ps.cancel:
-		// abort, allow shutdown to continue.
-		ps.wg.Done()
-		close(blocksCh)
-		return blocksCh
-	default:
+		case <-ps.cancel:
+			// abort, allow shutdown to continue.
+			ps.wg.Done()
+			close(blocksCh)
+			return blocksCh
+		default:
 	}
 
 	ps.wrapped.AddSubOnceEach(valuesCh, toStrings(keys)...)

@@ -13,8 +13,8 @@ cfg_val="/ip4/0.0.0.0/tcp/5001"
 
 # test that init succeeds
 test_expect_success "ipfs init succeeds" '
-  export IPFS_PATH="$(pwd)/.ipfs" &&
-  echo "IPFS_PATH: \"$IPFS_PATH\"" &&
+  export MBFS_PATH="$(pwd)/.ipfs" &&
+  echo "MBFS_PATH: \"$IPFS_PATH\"" &&
   BITS="2048" &&
   ipfs init --bits="$BITS" >actual_init ||
   test_fsh cat actual_init

@@ -10,22 +10,22 @@ import (
 	"sync/atomic"
 	"time"
 
-	decision "mbfs/go-mbfs/gx/QmXRphxBT4BH2GqGHUSbqULm7wNsxnpA2NrbNaY3DU1Y5K/go-bitswap/decision"
+	"mbfs/go-mbfs/gx/QmXRphxBT4BH2GqGHUSbqULm7wNsxnpA2NrbNaY3DU1Y5K/go-bitswap/decision"
 	bsmsg "mbfs/go-mbfs/gx/QmXRphxBT4BH2GqGHUSbqULm7wNsxnpA2NrbNaY3DU1Y5K/go-bitswap/message"
 	bsnet "mbfs/go-mbfs/gx/QmXRphxBT4BH2GqGHUSbqULm7wNsxnpA2NrbNaY3DU1Y5K/go-bitswap/network"
-	notifications "mbfs/go-mbfs/gx/QmXRphxBT4BH2GqGHUSbqULm7wNsxnpA2NrbNaY3DU1Y5K/go-bitswap/notifications"
+	"mbfs/go-mbfs/gx/QmXRphxBT4BH2GqGHUSbqULm7wNsxnpA2NrbNaY3DU1Y5K/go-bitswap/notifications"
 
-	exchange "mbfs/go-mbfs/gx/QmP2g3VxmC7g7fyRJDj1VJ72KHZbJ9UW24YjSWEj1XTb4H/go-ipfs-exchange-interface"
-	cid "mbfs/go-mbfs/gx/QmR8BauakNcBa3RbE4nbQu76PDiJgoQgz8AJdhJuiU4TAw/go-cid"
-	delay "mbfs/go-mbfs/gx/QmRJVNatYJwTAHgdSM1Xef9QVQ1Ch3XHdmcrykjP5Y4soL/go-ipfs-delay"
-	flags "mbfs/go-mbfs/gx/QmRMGdC6HKdLsPDABL9aXPDidrpmEHzJqFWSvshkbn9Hj8/go-ipfs-flags"
+	"mbfs/go-mbfs/gx/QmP2g3VxmC7g7fyRJDj1VJ72KHZbJ9UW24YjSWEj1XTb4H/go-ipfs-exchange-interface"
+	"mbfs/go-mbfs/gx/QmR8BauakNcBa3RbE4nbQu76PDiJgoQgz8AJdhJuiU4TAw/go-cid"
+	"mbfs/go-mbfs/gx/QmRJVNatYJwTAHgdSM1Xef9QVQ1Ch3XHdmcrykjP5Y4soL/go-ipfs-delay"
+	"mbfs/go-mbfs/gx/QmRMGdC6HKdLsPDABL9aXPDidrpmEHzJqFWSvshkbn9Hj8/go-ipfs-flags"
 	process "mbfs/go-mbfs/gx/QmSF8fPo3jgVBAy8fpdjjYqgG87dkJgUprRBHRd2tmfgpP/goprocess"
 	procctx "mbfs/go-mbfs/gx/QmSF8fPo3jgVBAy8fpdjjYqgG87dkJgUprRBHRd2tmfgpP/goprocess/context"
-	blockstore "mbfs/go-mbfs/gx/QmSNLNnL3kq3A1NGdQA9AtgxM9CWKiiSEup3W435jCkRQS/go-ipfs-blockstore"
-	blocks "mbfs/go-mbfs/gx/QmWoXtvgC8inqFkAATB7cp2Dax7XBi9VDvSg9RCCZufmRk/go-block-format"
-	peer "mbfs/go-mbfs/gx/QmcqU6QUDSXprb1518vYDGczrTJTyGwLG9eUa5iNX4xUtS/go-libp2p-peer"
+	"mbfs/go-mbfs/gx/QmSNLNnL3kq3A1NGdQA9AtgxM9CWKiiSEup3W435jCkRQS/go-ipfs-blockstore"
+	"mbfs/go-mbfs/gx/QmWoXtvgC8inqFkAATB7cp2Dax7XBi9VDvSg9RCCZufmRk/go-block-format"
+	"mbfs/go-mbfs/gx/QmcqU6QUDSXprb1518vYDGczrTJTyGwLG9eUa5iNX4xUtS/go-libp2p-peer"
 	logging "mbfs/go-mbfs/gx/QmcuXC5cxs79ro2cUuHs4HQ2bkDLJUYokwL8aivcX6HW3C/go-log"
-	metrics "mbfs/go-mbfs/gx/QmekzFM3hPZjTjUFGTABdQkEnQ3PTiMstY198PwSFr5w1Q/go-metrics-interface"
+	"mbfs/go-mbfs/gx/QmekzFM3hPZjTjUFGTABdQkEnQ3PTiMstY198PwSFr5w1Q/go-metrics-interface"
 )
 
 var log = logging.Logger("bitswap")
@@ -69,8 +69,7 @@ var rebroadcastDelay = delay.Fixed(time.Minute)
 // BitSwapNetwork. This function registers the returned instance as the network
 // delegate.
 // Runs until context is cancelled.
-func New(parent context.Context, network bsnet.BitSwapNetwork,
-	bstore blockstore.Blockstore) exchange.Interface {
+func New(parent context.Context, net bsnet.BitSwapNetwork, bstore blockstore.Blockstore) exchange.Interface {
 
 	// important to use provided parent context (since it may include important
 	// loggable data). It's probably not a good idea to allow bitswap to be
@@ -81,10 +80,8 @@ func New(parent context.Context, network bsnet.BitSwapNetwork,
 	// exclusively. We should probably find another way to share logging data
 	ctx, cancelFunc := context.WithCancel(parent)
 	ctx = metrics.CtxSubScope(ctx, "bitswap")
-	dupHist := metrics.NewCtx(ctx, "recv_dup_blocks_bytes", "Summary of duplicate"+
-		" data blocks recived").Histogram(metricsBuckets)
-	allHist := metrics.NewCtx(ctx, "recv_all_blocks_bytes", "Summary of all"+
-		" data blocks recived").Histogram(metricsBuckets)
+	dupHist := metrics.NewCtx(ctx, "recv_dup_blocks_bytes", "Summary of duplicate"+" data blocks recived").Histogram(metricsBuckets)
+	allHist := metrics.NewCtx(ctx, "recv_all_blocks_bytes", "Summary of all"+" data blocks recived").Histogram(metricsBuckets)
 
 	notif := notifications.New()
 	px := process.WithTeardown(func() error {
@@ -96,19 +93,34 @@ func New(parent context.Context, network bsnet.BitSwapNetwork,
 		blockstore:    bstore,
 		notifications: notif,
 		engine:        decision.NewEngine(ctx, bstore), // TODO close the engine with Close() method
-		network:       network,
+		network:       net,
 		findKeys:      make(chan *blockRequest, sizeBatchRequestChan),
 		process:       px,
 		newBlocks:     make(chan cid.Cid, HasBlockBufferSize),
 		provideKeys:   make(chan cid.Cid, provideKeysBufferSize),
-		wm:            NewWantManager(ctx, network),
+		wm:            NewWantManager(ctx, net),
 		counters:      new(counters),
 
 		dupMetric: dupHist,
 		allMetric: allHist,
+
+		// added by vingo
+		addprovs:      make(chan cid.Cid, 10),
+		/////////////////
 	}
 	go bs.wm.Run()
-	network.SetDelegate(bs)
+	net.SetDelegate(bs)
+
+	// added by vingo
+	bs.addprovs = net.SubCopyProvs()
+	//if n, ok := net.(network)
+	//if router, ok := bsnet.routing.(*dht.IpfsDHT); ok {
+	//	prov := router.GetProviders()
+	//	if bs, y := r.(*bitswap.Bitswap); y{
+	//		bs.SetProvChan(prov.SubCopyProvs())
+	//	}
+	//}
+	/////////////////
 
 	// Start up bitswaps async worker routines
 	bs.startWorkers(px, ctx)
@@ -169,7 +181,16 @@ type Bitswap struct {
 
 	sessID   uint64
 	sessIDLk sync.Mutex
+	
+	// added by vingo
+	addprovs chan cid.Cid
 }
+// added by vingo
+type addProv struct {
+	k   cid.Cid
+	val peer.ID
+}
+//////////////
 
 type counters struct {
 	blocksRecvd    uint64
@@ -223,6 +244,7 @@ func (bs *Bitswap) GetBlocks(ctx context.Context, keys []cid.Cid) (<-chan blocks
 		return nil, errors.New("bitswap is closed")
 	default:
 	}
+	// 订阅从 notifications 异步返回的管道消息，以便 block 从远端 peer 返回时能及时处理
 	promise := bs.notifications.Subscribe(ctx, keys...)
 
 	for _, k := range keys {
@@ -231,6 +253,7 @@ func (bs *Bitswap) GetBlocks(ctx context.Context, keys []cid.Cid) (<-chan blocks
 
 	mses := bs.getNextSessionID()
 
+	// 将需要 get 的 block 的 cid 加入wantlist，交由 wantmanager 去广播给网络
 	bs.wm.WantBlocks(ctx, keys, nil, mses)
 
 	remaining := cid.NewSet()
@@ -260,33 +283,33 @@ func (bs *Bitswap) GetBlocks(ctx context.Context, keys []cid.Cid) (<-chan blocks
 
 		for {
 			select {
-			case <-findProvsDelayCh:
-				// NB: Optimization. Assumes that providers of key[0] are likely to
-				// be able to provide for all keys. This currently holds true in most
-				// every situation. Later, this assumption may not hold as true.
-				findProvsReqCh = bs.findKeys
-				findProvsDelayCh = nil
-			case findProvsReqCh <- req:
-				findProvsReqCh = nil
-			case blk, ok := <-promise:
-				if !ok {
-					return
-				}
+				case <-findProvsDelayCh:		// 超时处理
+					// NB: Optimization. Assumes that providers of key[0] are likely to
+					// be able to provide for all keys. This currently holds true in most
+					// every situation. Later, this assumption may not hold as true.
+					findProvsReqCh = bs.findKeys
+					findProvsDelayCh = nil
+				case findProvsReqCh <- req:		// 将keys[0]间接推入 bs.findKeys 管道，交由 worker.providerQueryManager 协程去处理
+					findProvsReqCh = nil
+				case blk, ok := <-promise:		// 收到了异步返回的 block
+					if !ok {
+						return
+					}
 
-				// No need to find providers now.
-				findProvsDelay.Stop()
-				findProvsDelayCh = nil
-				findProvsReqCh = nil
+					// No need to find providers now.
+					findProvsDelay.Stop()
+					findProvsDelayCh = nil
+					findProvsReqCh = nil
 
-				bs.CancelWants([]cid.Cid{blk.Cid()}, mses)
-				remaining.Remove(blk.Cid())
-				select {
-				case out <- blk:
+					bs.CancelWants([]cid.Cid{blk.Cid()}, mses)
+					remaining.Remove(blk.Cid())
+					select {
+						case out <- blk:		// 将收到的 block 推入 out 管道，以便该方法的调用方从 out 管道取出 block 进行处理
+						case <-ctx.Done():
+							return
+					}
 				case <-ctx.Done():
 					return
-				}
-			case <-ctx.Done():
-				return
 			}
 		}
 	}()
@@ -321,6 +344,8 @@ func (bs *Bitswap) HasBlock(blk blocks.Block) error {
 // In case you run `git blame` on this comment, I'll save you some time: ask
 // @whyrusleeping, I don't know the answers you seek.
 // 其中一些工作实际上只需要在添加来自用户的数据块时完成，而不是在从网络接收数据块时执行。
+// 处理本地节点添加的 Block （在AddBlock里面会有调用）
+// 或者是从其他节点发过来的 Block（在ReceiveMessage里面会有调用）.
 func (bs *Bitswap) receiveBlockFrom(blk blocks.Block, from peer.ID) error {
 	select {
 	case <-bs.process.Closing():
@@ -328,6 +353,7 @@ func (bs *Bitswap) receiveBlockFrom(blk blocks.Block, from peer.ID) error {
 	default:
 	}
 
+	// 将收到的 block 存入本地数据库（会先检查库中是否已经存在）
 	err := bs.blockstore.Put(blk)
 	if err != nil {
 		log.Errorf("Error writing block to datastore: %s", err)
@@ -339,9 +365,12 @@ func (bs *Bitswap) receiveBlockFrom(blk blocks.Block, from peer.ID) error {
 	// is waiting on a GetBlock for that object, they will receive a reference
 	// to the same node. We should address this soon, but i'm not going to do
 	// it now as it requires more thought and isnt causing immediate problems.
-	//这里存在竞赛条件的可能性。如果用户创建了一个节点，然后将其添加到dagservice中，
-	// 而另一个goroutine正在为该对象等待GetBlock，则他们将收到对同一节点的引用。
-	// 我们应该尽快解决这一问题，但我不会这么做，因为这需要更多的思考，而且不会造成直接的问题。
+	// 这里存在竞赛条件的可能性。如果用户创建了一个 node ，然后将其添加到 dagservice 中，
+	// 而另一个goroutine正在为该对象等待GetBlock，则他们将收到对同一 node 的引用。
+	// 我们应该尽快解决这一问题，但现在还不会这么做，因为这需要更多的思考，而且这个问题现在还不会有什么影响。
+
+	// 通过将 blk 推入 PubSub 的 cmdChan 通道，
+	// 将收到的 block publish 给所有订阅了该 block 的节点
 	bs.notifications.Publish(blk)
 
 	k := blk.Cid()
@@ -351,13 +380,17 @@ func (bs *Bitswap) receiveBlockFrom(blk blocks.Block, from peer.ID) error {
 		bs.CancelWants(ks, s.id)
 	}
 
+	// 查找一下Engine中缓存的WantList信息，如果还有其它节点也在请求本节点刚刚接收到的数据，
+	// 则将该数据放入peerRequestQueue中去
 	bs.engine.AddBlock(blk)
 
+	// 将刚收到的 Block 的 cid  通过 newBlocks 管道发送到  worker 的 provideCollector 协程，
+	// 随后由 provideCollector 协程通过 providerKeys 管道传到 worker 的 provideWorker 协程，
+	// provideWorker 协程会负责将 cid 广播到网络
 	select {
-	case bs.newBlocks <- blk.Cid():
-		// send block off to be reprovided
-	case <-bs.process.Closing():
-		return bs.process.Close()
+		case bs.newBlocks <- blk.Cid():
+		case <-bs.process.Closing():
+			return bs.process.Close()
 	}
 	return nil
 }
@@ -381,12 +414,14 @@ func (bs *Bitswap) ReceiveMessage(ctx context.Context, p peer.ID, incoming bsmsg
 
 	// This call records changes to wantlists, blocks received,
 	// and number of bytes transfered.
+	// 通过Engine的一个账单系统，统计一下本节点与发送数据节点之间的数据交互统计，
+	// 然后再查找一下Engine中缓存的WantList信息，如果还有其它节点也在请求本节点刚刚接收到的数据，
+	// 则将该数据放入peerRequestQueue中去
 	bs.engine.MessageReceived(p, incoming)
-	// TODO: this is bad, and could be easily abused.
+
+	// TODO: this is bad, and could be easily abused.(这样写确实该鄙视,优化一下，从上面的MessageReceived方法调用里直接返回 iblocks 就好了)
 	// Should only track *useful* messages in ledger
-
 	iblocks := incoming.Blocks()
-
 	if len(iblocks) == 0 {
 		return
 	}

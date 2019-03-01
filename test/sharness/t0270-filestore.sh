@@ -84,7 +84,7 @@ init_ipfs_filestore
 test_filestore_adds
 
 test_debug '
-  echo "pwd=$(pwd)"; echo "IPFS_PATH=$IPFS_PATH"
+  echo "pwd=$(pwd)"; echo "MBFS_PATH=$IPFS_PATH"
 '
 
 

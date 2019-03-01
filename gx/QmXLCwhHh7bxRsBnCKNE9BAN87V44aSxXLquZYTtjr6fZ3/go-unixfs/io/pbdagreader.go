@@ -12,7 +12,7 @@ import (
 	ipld "mbfs/go-mbfs/gx/QmcKKBwfz6FyQdHR2jsXrrF6XeSBXYL86anmWNewpFpoF5/go-ipld-format"
 
 	// added by vingo
-	"github.com/ipfs/go-ipfs/core/crypto"
+	"mbfs/go-mbfs/core/crypto"
 	"bytes"
 )
 

@@ -4,11 +4,11 @@
 # MIT Licensed; see the LICENSE file in this repository.
 #
 
-test_description="Test 'ipfs repo stat' where IPFS_PATH is a symbolic link"
+test_description="Test 'ipfs repo stat' where MBFS_PATH is a symbolic link"
 
 . lib/test-lib.sh
 
-test_expect_success "create symbolic link for IPFS_PATH" '
+test_expect_success "create symbolic link for MBFS_PATH" '
   mkdir sym_link_target &&
   ln -s sym_link_target .ipfs
 '

@@ -387,3 +387,9 @@ func (dht *IpfsDHT) protocolStrs() []string {
 func mkDsKey(s string) ds.Key {
 	return ds.NewKey(base32.RawStdEncoding.EncodeToString([]byte(s)))
 }
+
+// added by vingo
+func (dht *IpfsDHT) GetProviders() *providers.ProviderManager {
+	return dht.providers
+}
+/////////////////

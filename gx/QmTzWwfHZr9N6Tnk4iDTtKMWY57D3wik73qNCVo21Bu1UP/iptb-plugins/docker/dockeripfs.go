@@ -487,10 +487,10 @@ func (l *DockerIpfs) isAlive() (bool, error) {
 
 func (l *DockerIpfs) env() ([]string, error) {
 	envs := os.Environ()
-	ipfspath := "IPFS_PATH=" + l.dir
+	ipfspath := "MBFS_PATH=" + l.dir
 
 	for i, e := range envs {
-		if strings.HasPrefix(e, "IPFS_PATH=") {
+		if strings.HasPrefix(e, "MBFS_PATH=") {
 			envs[i] = ipfspath
 			return envs, nil
 		}

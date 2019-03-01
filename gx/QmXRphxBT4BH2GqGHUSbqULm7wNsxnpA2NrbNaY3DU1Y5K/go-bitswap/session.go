@@ -50,8 +50,7 @@ type Session struct {
 	tag string
 }
 
-// NewSession creates a new bitswap session whose lifetime is bounded by the
-// given context
+// NewSession creates a new bitswap session whose lifetime is bounded by the given context
 func (bs *Bitswap) NewSession(ctx context.Context) exchange.Fetcher {
 	s := &Session{
 		activePeers:   make(map[peer.ID]struct{}),

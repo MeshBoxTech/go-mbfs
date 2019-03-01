@@ -186,9 +186,10 @@ func (reg *registry) add(topic string, ch chan interface{}, st subtype) {
 	reg.revTopics[ch][topic] = true
 }
 
+// 将 msg推入所有订阅者提供的接收 block 的通道里，同时从 topic 队列里将该通道对应的元素删除
 func (reg *registry) send(topic string, msg interface{}) {
 	for ch, st := range reg.topics[topic] {
-		ch <- msg
+		ch <- msg			// 节点添加文件或从网络收到block 时推入所有订阅者提供的接收 block 的通道里
 		switch st {
 		case stOnceAny:
 			for topic := range reg.revTopics[ch] {
